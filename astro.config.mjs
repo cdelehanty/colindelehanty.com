@@ -3,9 +3,9 @@ import react from '@astrojs/react'
 import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
 import tailwind from '@astrojs/tailwind'
-import { analytics } from '@astrojs/vercel/analytics'
 import vercel from '@astrojs/vercel/serverless'
 
+// https://astro.build/config
 export default defineConfig({
 	site: 'https://colindelehanty.com',
 	integrations: [
@@ -18,14 +18,10 @@ export default defineConfig({
 		}),
 		sitemap(),
 		react(),
-		tailwind(),
-		analytics()
+		tailwind()
 	],
 	output: 'hybrid',
 	adapter: vercel({
-		webAnalytics: {
-			enabled: true
-		},
 		speedInsights: {
 			enabled: true
 		}
