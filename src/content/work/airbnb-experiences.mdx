@@ -1,0 +1,72 @@
+---
+category: commercial
+title: Airbnb Experiences
+description: Promotional video for an upcoming stargazing opportunity available through Airbnb Experiences. The event took place at Gran Telescopio Canarias in La Palma, Spain.
+client: Airbnb
+date: 2018-07-07
+role: Photographer
+
+# Media references
+cover: work/AirbnbExperiences/AirbnbExperiences_Cover
+
+# External links
+link:
+  href: https://news.airbnb.com/en-uk/get-up-close-to-the-red-planet-with-airbnb-and-the-worlds-largest-telescope
+  text: See project website
+
+# Metadata
+featured: false
+excluded: false
+---
+
+import MDXVideoCarousel from '../../components/content/mdx-video-carousel.tsx'
+
+<MDXVideo
+	src="0FkAcQg73sY?si=tkCnS6DOUfYOUoGc"
+	description=""
+	videoType="youtube"
+	isFirstChild={true}
+/>
+
+<MDXInfo date={frontmatter.date} client={frontmatter.client} role={frontmatter.role} />
+
+<MDXContainer containerType="header">
+
+## Get Up Close to Mars
+
+</MDXContainer>
+
+<MDXContainer containerType="text">
+	This unique experience conincided with Mars being it's closest to Earth in 15 years and the
+	longest lunar eclipse of the 21st century. Working with the two hosts of the event and a small
+	film crew, I captured day-to-night time-lapses and footage during our private tour of GTC which
+	was used by Airbnb to promote the upcoming experience.
+</MDXContainer>
+
+<MDXVideoCarousel
+	client:load
+	media={[
+		{
+			src: '1028191386',
+			alt: 'Vimeo Video 1',
+			description: 'A sample Vimeo video'
+		},
+
+    	{
+    		src: '1028191378',
+    		alt: 'Vimeo Video 1',
+    		description: 'A sample Vimeo video'
+    	},
+
+    	{
+    		src: '1028191368',
+    		alt: 'Vimeo Video 1',
+    		description: 'A sample Vimeo video'
+    	}
+    ]}
+
+/>
+
+<MDXContainer containerType="footer">
+	<MDXList title="Team" items="Pete Betancourt" />
+</MDXContainer>

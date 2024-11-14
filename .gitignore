@@ -1,0 +1,38 @@
+# build output
+dist/
+.vercel/
+
+# generated types
+.astro/
+
+# dependencies
+node_modules/
+
+# Local environment files
+.env
+.env.local
+.env.production
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Prettier config (if auto-generated or user-specific)
+.prettierignore
+.prettierrc
+
+# IDE-specific files (e.g., VSCode settings)
+.vscode/
+
+# System files (macOS, Windows)
+.DS_Store
+Thumbs.db
+
+# source directories
+src/_trash/
+/scripts
+/public/video
+/public/work
+/public/about

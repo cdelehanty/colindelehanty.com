@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	:root {
+		--white: #ffffff;
+		--black: #080808;
+		--gray-25: #fdfdfd;
+		--gray-50: #fafafa;
+		--gray-100: #f4f4f5;
+		--gray-200: #e3e3e7;
+		--gray-300: #d4d4d8;
+		--gray-400: #a1a1aa;
+		--gray-500: #71717a;
+		--gray-600: #52525b;
+		--gray-700: #3f3f46;
+		--gray-800: #27272a;
+		--gray-900: #18181b;
+		--gray-950: #171717;
+
+		--brand-25: #f9fdfc;
+		--brand-50: #f2fbf9;
+		--brand-100: #d4f3ed;
+		--brand-200: #a8e7db;
+		--brand-300: #75d3c5;
+		--brand-400: #48b9ac;
+		--brand-500: #2e9e92;
+		--brand-600: #24837b;
+		--brand-700: #206560;
+		--brand-800: #1d524e;
+		--brand-900: #1c4542;
+		--brand-950: #0b2827;
+
+		--text-primary: var(--gray-50);
+		--text-secondary: var(--gray-300);
+		--text-secondary--hover: var(--gray-200);
+		--text-tertiary: var(--gray-400);
+		--text-tertiary--hover: var(--gray-300);
+		--text-white: var(--white);
+		--text-disabled: var(--gray-500);
+		--text-brand-primary: var(--brand-400);
+		--text-brand-secondary: var(--brand-500);
+		--text-brand-tertiary: var(--brand-600);
+
+		--border-primary: var(--gray-700);
+		--border-secondary: var(--gray-800);
+		/* --border-tertiary: var(--gray-800); */
+		/* --border-disabled: var(--gray-700);
+		--border-disabled--subtle: var(--gray-800);
+		--border-brand: var(--brand-300);
+		--border-brand-solid: var(--brand-500);
+		--border-error: var(--error-400);
+		--border-error-solid: var(--error-500); */
+
+		--fg-primary: var(--white);
+		--fg-secondary: var(--gray-300);
+		--fg-secondary--hover: var(--gray-200);
+		--fg-tertiary: var(--gray-400);
+		--fg-tertiary--hover: var(--gray-300);
+		--fg-quaternary: var(--gray-400);
+		--fg-quaternary--hover: var(--gray-300);
+		--fg-white: var(--white);
+		/* --fg-disabled: var(--gray-500);
+		--fg-disabled--subtle: var(--gray-600); */
+		--fg-brand-primary: var(--brand-500);
+		/* --fg-brand-secondary: var(--brand-500); */
+
+		--bg-primary: var(--gray-950);
+		--bg-primary--hover: var(--gray-800);
+		--bg-primary-solid: var(--gray-900);
+		--bg-secondary: var(--gray-900);
+		--bg-secondary--hover: var(--gray-800);
+		--bg-secondary--subtle: var(--gray-900);
+		--bg-secondary-solid: var(--gray-600);
+		--bg-tertiary: var(--gray-800);
+		--bg-quaternary: var(--gray-700);
+		--bg-active: var(--gray-800);
+		/* --bg-disabled: var(--gray-800);
+		--bg-disabled--subtle: var(--gray-900); */
+		--bg-overlay: var(--gray-800);
+
+		--bg-brand-primary: var(--brand-500);
+		--bg-brand-secondary: var(--brand-600);
+		--bg-brand-solid: var(--brand-600);
+		--bg-brand-solid--hover: var(--brand-500);
+		--bg-brand-section: var(--bg-secondary);
+		--bg-brand-section--subtle: var(--bg-primary);
+
+		--utility-background: var(--gray-950);
+		--utility-gray-50: var(--gray-900);
+		--utility-gray-100: var(--gray-800);
+		--utility-gray-200: var(--gray-700);
+		--utility-gray-300: var(--gray-600);
+		--utility-gray-400: var(--gray-500);
+		--utility-gray-500: var(--gray-400);
+		--utility-gray-600: var(--gray-300);
+		--utility-gray-700: var(--gray-200);
+		--utility-gray-800: var(--gray-100);
+		--utility-gray-900: var(--gray-50);
+
+		--utility-brand-50: var(--brand-900);
+		--utility-brand-100: var(--brand-800);
+		--utility-brand-200: var(--brand-700);
+		--utility-brand-300: var(--brand-600);
+		--utility-brand-400: var(--brand-500);
+		--utility-brand-500: var(--brand-400);
+		--utility-brand-600: var(--brand-300);
+		--utility-brand-700: var(--brand-200);
+		--utility-brand-800: var(--brand-100);
+		--utility-brand-900: var(--brand-50);
+
+		--btn-primary-fg: var(--white);
+		--btn-primary-fg--hover: var(--white);
+		--btn-primary-bg: var(--brand-600);
+		--btn-primary-bg--hover: var(--brand-700);
+
+		--btn-secondary-fg: var(--gray-700);
+		--btn-secondary-fg--hover: var(--gray-800);
+		--btn-secondary-bg: var(--white);
+		--btn-secondary-bg--hover: var(--gray-50);
+
+		--btn-secondary-color-fg: var(--brand-700);
+		--btn-secondary-color-fg--hover: var(--brand-800);
+		--btn-secondary-color-bg: var(--white);
+		--btn-secondary-color-bg: var(--brand-50);
+
+		--btn-tertiary-fg: var(--gray-400);
+		--btn-tertiary-fg--hover: var(--gray-200);
+		--btn-tertiary-bg--hover: var(--gray-800);
+
+		/* --btn-tertiary-color-fg: var(--brand-400); */
+
+		--radius: 0.5rem;
+	}
+}
+
+html,
+body {
+	/* overflow: auto; */
+	/* -ms-overflow-style: none; 
+	/* For WebKit browsers */
+	scrollbar-width: 9px;
+	font-family: 'soehne', sans-serif;
+}
+
+@layer base {
+	@font-face {
+		font-family: 'soehne';
+		src: url('/fonts/soehne-leicht.woff2') format('woff2');
+		font-weight: 300;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: 'soehne';
+		src: url('/fonts/soehne-buch.woff2') format('woff2');
+		font-weight: 400;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: 'soehne';
+		src: url('/fonts/soehne-halbfett.woff2') format('woff2');
+		font-weight: 500;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	/* * {
+		@apply border-border;
+	} */
+
+	/* html {
+		@apply scroll-pt-16 lg:scroll-pt-0;
+	} */
+
+	body {
+		@apply bg-black font-sans text-primary;
+		font-feature-settings:
+			'rlig' 1,
+			'calt' 1;
+	}
+
+	/* MdxComponent: For <code></code> with no parent <pre></pre> */
+	:not(pre) > code {
+		@apply relative rounded border bg-black px-[0.3rem] py-[0.2rem] font-mono text-sm text-primary;
+	}
+}
+
+.reveal {
+	transform: translateY(100px);
+	opacity: 0;
+	animation: reveal 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.fade {
+	opacity: 0;
+	animation: fade 1.3s forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.reveal,
+	.fade {
+		transform: none !important;
+		opacity: 1 !important;
+		animation: none !important;
+	}
+}
+
+@keyframes fade {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes reveal {
+	from {
+		transform: translateY(-10px);
+		opacity: 0;
+	}
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+.transform-gpu {
+	transform: translate3d(var(--tw-translate-x), var(--tw-translate-y), 0) rotate(var(--tw-rotate))
+		skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x))
+		scaleY(var(--tw-scale-y));
+}
+
+.animate-fade {
+	animation: fade 1.3s forwards;
+}
+.animate-fadeSm {
+	animation: fade 0.4s ease-out forwards;
+}
+
+.video-fade {
+	animation: fade 1s forwards;
+}
+
+.animate-revealHero1 {
+	animation: reveal 1s cubic-bezier(0.4, 0, 0.2, 1) 0.5s forwards;
+}
+.animate-revealHero2 {
+	animation: reveal 1s cubic-bezier(0.4, 0, 0.2, 1) 0.6s forwards;
+}
+
+.animate-revealHero3 {
+	animation: reveal 1s cubic-bezier(0.4, 0, 0.2, 1) 0.8s forwards;
+}
+.animate-revealContent {
+	animation: reveal 1.5s cubic-bezier(0.4, 0, 0.2, 1) 0.9s forwards;
+}
+
+video:-webkit-full-screen {
+	width: 100%;
+	height: auto;
+	object-fit: contain;
+}
+
+video:-moz-full-screen {
+	width: 100%;
+	height: auto;
+	object-fit: contain;
+}
+
+.ol-item::before {
+	content: counter(item) '. '; /* Add a number followed by a dot */
+	counter-increment: item; /* Increment the counter for each item */
+	color: #4b5563; /* Adjust color */
+	font-size: 1.25rem; /* Tailor the font size */
+	font-weight: 500; /* Adjust weight if needed */
+}

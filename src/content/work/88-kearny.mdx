@@ -1,0 +1,92 @@
+---
+category: installation
+title: 88 Kearny
+description: Time-lapses commissioned by Gensler for the Fog City module in their digital art experience at 88 Kearny Street in downtown San Francisco.
+client: Gensler
+date: 2021-01-06
+role: Photographer
+
+# Media references
+cover: work/88Kearny/88Kearny_Cover
+video: /video/FogCity_Video.mp4
+
+# External links
+link:
+  href: https://dxd.gensler.com/case-studies/88-kearny
+  text: See project website
+
+# Metadata
+featured: true
+excluded: false
+---
+
+import MDXVideoCarousel from '../../components/content/mdx-video-carousel.tsx'
+
+<MDXVideo src="1028030233" description="" videoType="vimeo" isFirstChild={true} />
+
+<MDXInfo year="2020-21" client={frontmatter.client} role={frontmatter.role} />
+
+<MDXContainer containerType="header">
+
+    ## Fog City
+
+</MDXContainer>
+<MDXContainer containerType="text">
+	**Goal:** Create up to 10 landscape and urban time-lapses of 6 locations in the San Francisco Bay
+	Area at the height of the fog season.
+</MDXContainer>
+<MDXContainer containerType="text">
+	**Challenge:** Unpredictable weather patterns was the greatest challenge. Deciding which
+	locations, days and times of day to shoot would require defined goals for the project supported by
+	client feedback, image testing and weather data.
+</MDXContainer>
+<MDXContainer containerType="text">
+	**Action:** Present reference images depicting various locations and levels of fog activity for
+	review. Scout selected locations and test images both on-site and in VR with creative and
+	technical leads. Define shoot schedule supported by collected weather data and build a shot list for each location.
+</MDXContainer>
+<MDXContainer containerType="text">
+	**Result:** Delivered 6 approved time-lapses on schedule for lobby opening and received positive
+	feedback from the end-client.
+</MDXContainer>
+<MDXContainer containerType="text">
+	**Core Responsibilities:** Planning, Location Scouting, Photography, Editing, Color
+</MDXContainer>
+
+<MDXVideoCarousel
+	client:load
+	media={[
+		{
+			src: '1028029656',
+			alt: 'Morning Fog on Mount Tamalpais'
+		},
+		{
+			src: '1028029651',
+			alt: 'Fog over Sausalito'
+		},
+		{
+			src: '1028029643',
+			alt: 'Sunset Fog on Mount Tamalpais'
+		},
+		{
+			src: '1028028827',
+			alt: 'Fog over San Francisco Bay'
+		},
+		{
+			src: '1028029663',
+			alt: 'Golden Gate Bridge',
+			description: 'Comped out the strobing light for a slower fading light.'
+		}
+	]}
+/>
+
+<MDXContainer containerType="footer">
+	<MDXList
+		title="Team"
+		items="
+		Greg Gallimore - Digital Experience Leader & Director
+		Kaya Ono - Design Lead & Art Director
+		Creative Technologist - Jacob Stephens"
+	/>
+
+</MDXContainer>

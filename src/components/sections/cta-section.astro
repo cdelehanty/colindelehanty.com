@@ -1,0 +1,48 @@
+---
+import { cn } from '@/lib/utils'
+import { buttonVariants } from '../ui/button'
+---
+
+<section class="section-padding relative z-10 flex w-full pt-32 md:pt-48">
+	<div
+		class="pointer-events-none absolute left-0 top-0 -z-10 mt-10 h-full w-full overflow-x-clip md:mt-32"
+	>
+		<div
+			class="absolute left-0 top-0 h-full w-full transform-gpu before:absolute before:top-0 before:z-10 before:h-32 before:w-full before:bg-gradient-to-b before:from-black before:to-black/0 after:absolute after:bottom-0 after:left-0 after:h-full after:w-full after:bg-gradient-to-t after:from-black after:to-black/0"
+		>
+			<img
+				src="https://cdn.mos.cms.futurecdn.net/AoWXgnHSxAAPxqymPQMQYL-1200-80.jpg"
+				alt="Space, at your fingertips"
+				loading="lazy"
+				decoding="async"
+				class="absolute inset-0 h-full w-full object-cover"
+				style="color: transparent;"
+			/>
+		</div>
+	</div>
+
+	<div class="container flex w-full flex-col items-center justify-between gap-16">
+		<div class="w-full text-left">
+			<h1
+				class="mb-6 w-full text-display-lg font-semibold text-primary md:mb-12 md:text-display-2xl"
+			>
+				What will <br class="hidden lg:inline" /> you discover?
+			</h1>
+
+			<a
+				href="mailto:colin.delehanty@gmail.com"
+				target="_blank"
+				class={cn(
+					buttonVariants({
+						variant: 'secondary',
+						size: 'md',
+						rounded: 'full'
+					}),
+					'pointer-events-auto w-max'
+				)}
+			>
+				<span>Get in touch</span>
+			</a>
+		</div>
+	</div>
+</section>

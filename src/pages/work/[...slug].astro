@@ -1,0 +1,33 @@
+---
+import { MdxComponents } from '@/components/content/mdx-components'
+import WorkProject from '@/layouts/work-project.astro'
+import { getCollection, type CollectionEntry } from 'astro:content'
+
+export async function getStaticPaths() {
+	const projects = await getCollection('work')
+	return projects
+		.filter((project: CollectionEntry<'work'>) => !project.data.excluded)
+		.map((project: CollectionEntry<'work'>) => ({
+			params: { slug: project.slug },
+			props: project
+		}))
+}
+
+type Props = CollectionEntry<'work'>
+
+const project: Props = Astro.props
+const slug: string = Astro.params.slug
+
+const { Content } = await project.render()
+
+if (!slug || !project) {
+	return new Response(null, {
+		status: 404,
+		statusText: 'Not found'
+	})
+}
+---
+
+<WorkProject {...project}>
+	<Content components={MdxComponents} />
+</WorkProject>

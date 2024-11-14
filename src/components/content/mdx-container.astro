@@ -1,0 +1,27 @@
+---
+type ContainerType = 'default' | 'text' | 'header'
+
+const { containerType = 'default' } = Astro.props as { containerType: ContainerType }
+
+const containerClasses = {
+	default: 'my-[27px]',
+	header: 'my-0',
+	text: 'my-[27px]',
+	image: 'my-[64px]',
+	footer: 'bg-primary 2xl-container:rounded-sm py-16 mt-32'
+}
+
+const selectedContainer = containerClasses[containerType] || containerClasses.default
+---
+
+<div
+	class={`container ${selectedContainer} mdx-padding lg:grid w-full justify-center lg:gap-10 lg:grid-cols-[135px_1fr_135px]`}
+>
+	<div class="flex w-full justify-center lg:col-span-1 lg:col-start-2">
+		<div
+			class={`prose w-full max-w-[1080px] ${selectedContainer === containerClasses.footer ? 'flex-col flex gap-8' : ''}`}
+		>
+			<slot />
+		</div>
+	</div>
+</div>

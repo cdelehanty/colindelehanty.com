@@ -1,0 +1,83 @@
+---
+category: documentary
+title: Into Twin Galaxies
+description: Three National Geographic Adventurers of the Year embark on a ski and kayak mission across Greenland. Using kite skis, they tow their whitewater kayaks over 1,000km of ice.
+client: Red Bull TV
+date: 2016-09-02
+role: Assistant Camera
+
+# Media references
+cover: work/IntoTwinGalaxies/IntoTwinGalaxies_Cover
+
+# Metadata
+featured: false
+excluded: false
+---
+
+import MDXVideoCarousel from '../../components/content/mdx-video-carousel.tsx'
+
+<MDXVideo src="o-ZMCRkUmZs" videoType="youtube" isFirstChild={true} />
+
+<MDXInfo date={frontmatter.date} client={frontmatter.client} role={frontmatter.role} />
+
+<MDXContainer containerType="header">
+
+    ## Project Overview
+
+</MDXContainer>
+
+<MDXContainer containerType="text">
+	I joined this project for the second leg of production on the west side of Greenland. We met the
+	athletes near meltwater streams forming at the glacier terminus to document the kayaking portion
+	of the adventure. My primary responsibilities were to assist with drone operation, gear management
+	and scouting. I also assisted with camera work and shot time-lapses.
+</MDXContainer>
+
+<MDXVideoCarousel
+	client:load
+	media={[
+		{
+			src: '1028552050',
+			alt: 'Image 1',
+			description: 'First image description'
+		},
+		{
+			src: '1028552062',
+			alt: 'Image 1',
+			description: 'First image description'
+		},
+		{
+			src: '1028552071',
+			alt: 'Image 1',
+			description: 'First image description'
+		},
+		{
+			src: '1028552082',
+			alt: 'Image 1',
+			description: 'First image description'
+		},
+		{
+			src: '1028552087',
+			alt: 'Image 1',
+			description: 'First image description'
+		},
+		{
+			src: '1028552107',
+			alt: 'Image 1',
+			description: 'First image description'
+		}
+	]}
+/>
+
+<MDXContainer containerType="footer">
+	<MDXList
+		title="Team"
+		items="Director
+		Cinematographers"
+	/>
+	<MDXList
+		title="Awards"
+		items="Finalist and Special Jury Mention: Banff Mountain Festival
+	 	Grand Prize Winner: New Zealand Mountain Film Festival"
+	/>
+</MDXContainer>

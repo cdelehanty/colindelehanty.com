@@ -1,0 +1,30 @@
+---
+import MainLayout from '@/layouts/main-layout.astro'
+import HeroSection from '@/components/sections/hero-section.astro'
+import HeaderSection from '@/components/sections/header-section.astro'
+import { InfoTabs } from '@/features/info/components/info-tabs'
+---
+
+<MainLayout title="About" mainClass="">
+	<HeroSection
+		title="About"
+		description="Lorem ipsum odor amet, consectetuer adipiscing elit. Libero nascetur praesent viverra tincidunt id magna per tincidunt. Mi pellentesque id sagittis tortor quisque molestie. Dolor elementum justo nostra maximus ac felis. Turpis diam nunc at ullamcorper cubilia at dis. Enim dignissim ante vel sem aliquet elementum. Dapibus etiam laoreet aliquet facilisis; accumsan ut augue consequat aliquet."
+		primary={{
+			text: 'View Resume',
+			href: 'https://res.cloudinary.com/dzsswr2ti/image/upload/ColinDelehanty_Resume.pdf'
+		}}
+		secondary={{
+			text: 'colin.delehanty@gmail.com',
+			href: 'mailto:colin.delehanty@gmail.com'
+		}}
+		cover="about/About_Cover"
+		animation={true}
+	/>
+	<HeaderSection
+		title="Cursus lobortis orci"
+		description="Lorem ipsum odor amet, consectetuer adipiscing elit."
+		className="reveal animate-revealContent pb-16"
+	>
+		<InfoTabs slot="section-content" client:load />
+	</HeaderSection>
+</MainLayout>

@@ -1,0 +1,28 @@
+---
+import MainLayout from './main-layout.astro'
+import HeroSection from '@/components/sections/hero-section.astro'
+
+const { data, slug } = Astro.props
+const { title, description } = data
+---
+
+<MainLayout title={title} description={description} mainClass="">
+	<HeroSection
+		category={data.category}
+		title={data.title}
+		subtitle={data.subtitle}
+		description={data.description}
+		cover={data.cover}
+		primary={{
+			text: data.link?.text, // Use optional chaining and provide a default
+			href: data.link?.href // Use optional chaining and provide a default
+		}}
+		slug={slug}
+		slug={slug}
+		animation={true}
+	/>
+
+	<article class="reveal animate-revealContent">
+		<slot />
+	</article>
+</MainLayout>

@@ -1,0 +1,46 @@
+---
+import { CldImage } from 'astro-cloudinary'
+
+const { data: projectData, slug, scaleTransition = true } = Astro.props
+const { title, subtitle, category, cover } = projectData || {}
+---
+
+<article title={title}>
+	<a href={`/work/${slug}/`} class="flex-col overflow-hidden">
+		<div class=`relative overflow-hidden rounded-sm flex aspect-3/4`>
+			{
+				cover && (
+					<CldImage
+						width={630}
+						height={840}
+						crop={{
+							type: 'auto',
+							source: true,
+							gravity: 'center'
+						}}
+						src={cover}
+						alt={title}
+						class={`absolute transition-transform duration-300 ${scaleTransition ? 'hover:scale-105' : ''}`}
+					/>
+					// <img
+					// 	width="630"
+					// 	height="840"
+					// 	src={`${cover.includes('png') ? `${cover}.png` : cover}.jpg`}
+					// 	alt={title}
+					// 	class={`absolute inset-0 h-full w-full object-cover transition-transform duration-300 ${scaleTransition ? 'hover:scale-105' : ''}`}
+					// />
+				)
+			}
+
+			<div
+				class="pointer-events-none absolute inset-0 z-50 flex flex-col justify-between p-4 md:p-[18px]"
+			>
+				<span class="text-xs font-normal capitalize">{category}</span>
+				<div class="mt-6 flex flex-col">
+					<div class="truncate text-lg font-normal text-primary">{title}</div>
+					{subtitle && <span class="truncate text-lg font-normal text-primary">{subtitle}</span>}
+				</div>
+			</div>
+		</div>
+	</a>
+</article>

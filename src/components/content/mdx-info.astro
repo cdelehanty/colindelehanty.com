@@ -1,0 +1,37 @@
+---
+type InfoProps = {
+	date?: string
+	client: string
+	role: string
+	year?: string
+}
+
+const { date, client, role, year } = Astro.props as InfoProps
+
+const displayYear = date ? new Date(date).getFullYear().toString() : year
+
+const columns = [
+	{ title: 'Year', value: displayYear },
+	{ title: 'Client', value: client },
+	{ title: 'Role', value: role }
+]
+---
+
+<div
+	class={`container mt-6 mb-24 mdx-padding lg:grid w-full justify-center lg:gap-10 lg:grid-cols-[135px_1fr_135px]`}
+>
+	<div class="flex w-full justify-center lg:col-span-1 lg:col-start-2">
+		<div class={`prose w-full max-w-[1080px]`}>
+			<div class="flex flex-wrap gap-x-12 gap-y-4">
+				{
+					columns.map((column) => (
+						<div class="flex flex-col gap-1">
+							<div class="text-sm font-semibold text-tertiary">{column.title}</div>
+							<div class="text-lg font-medium text-primary">{column.value}</div>
+						</div>
+					))
+				}
+			</div>
+		</div>
+	</div>
+</div>

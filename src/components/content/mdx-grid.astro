@@ -1,0 +1,41 @@
+---
+import { cn } from '@/lib/utils'
+import { CldImage } from 'astro-cloudinary'
+
+interface ImageProps {
+	src: string
+	alt: string
+	width: number
+	height: number
+	imageClass: string
+}
+
+interface ImageGridProps {
+	images: ImageProps[]
+	description?: string
+	className?: string
+}
+
+const { images, description, className } = Astro.props as ImageGridProps
+---
+
+<div class="my-32 px-6 2xl:container 2xl:px-0">
+	<div class={cn('grid  gap-2 ', className)}>
+		{
+			images.map(({ src, alt, width, height, imageClass }, index) => (
+				<CldImage
+					class={cn('my-0 aspect-auto h-auto w-full object-cover shadow-sm', imageClass)}
+					width={width}
+					height={height}
+					src={src}
+					alt={alt}
+				/>
+			))
+		}
+	</div>
+	{
+		description && (
+			<p class="mt-2 max-w-screen-md text-sm text-foreground-quaternary">{description}</p>
+		)
+	}
+</div>

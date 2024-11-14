@@ -1,0 +1,77 @@
+---
+import { cn } from '@/lib/utils'
+import { getCldVideoUrl, getCldImageUrl } from 'astro-cloudinary/helpers'
+
+interface Props {
+	src: string
+	description?: string
+	cover?: string
+	className?: string
+	videoType: 'youtube' | 'vimeo' | 'video'
+	isFirstChild?: boolean
+}
+
+const { src, cover, description, className, videoType, isFirstChild, ...attrs } = Astro.props
+
+const getEmbedVideo = (type: string, src: string) => {
+	if (type === 'youtube') {
+		const videoId = src.includes('youtube.com')
+			? src.split('v=')[1]?.split('&')[0]
+			: src.includes('youtu.be')
+				? src.split('youtu.be/')[1]
+				: src
+		return `https://www.youtube.com/embed/${videoId}`
+	} else if (type === 'vimeo') {
+		const videoId = src.includes('vimeo.com') ? src.split('vimeo.com/')[1]?.split('?')[0] : src
+		return `https://player.vimeo.com/video/${videoId}`
+	} else if (type === 'video') {
+		return getCldVideoUrl({ src })
+	}
+	return src
+}
+
+const embedVideo = getEmbedVideo(videoType, src)
+---
+
+<!-- mb-16 md:mb-24 -->
+<div class={cn('mdx-padding 2xl:container ', isFirstChild ? 'my-0' : ' my-10 md:my-16', className)}>
+	{
+		videoType === 'video' ? (
+			<video
+				src={src}
+				height="720"
+				width="1280"
+				class="aspect-auto h-full w-full object-cover"
+				controls={true}
+				autoplay={false}
+				loop
+				muted
+				poster={cover}
+				{...attrs}
+				playsinline
+				preload="none"
+			>
+				Your browser does not support the video tag.
+			</video>
+		) : (
+			<div class="relative aspect-video">
+				<iframe
+					class="absolute left-0 top-0 h-full w-full"
+					src={embedVideo}
+					loading="lazy"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+					referrerpolicy="strict-origin-when-cross-origin"
+					allowfullscreen
+					{...attrs}
+				/>
+			</div>
+		)
+	}
+	{description && <p class="mt-3 max-w-3xl text-sm text-tertiary md:mt-4">{description}</p>}
+</div>
+
+{
+	videoType === 'vimeo' && (
+		<script src="https://player.vimeo.com/api/player.js" async defer is:inline />
+	)
+}

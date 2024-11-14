@@ -1,0 +1,20 @@
+---
+import MainLayout from '@/layouts/main-layout.astro'
+import ProjectTabs from '@/features/projects/components/project-tabs.astro'
+import ProjectCard from '@/features/projects/components/project-card.astro'
+import { getProjects } from '@/lib/fetchers'
+import HeroSection from '@/components/sections/hero-section.astro'
+
+const projects = await getProjects()
+---
+
+<MainLayout title="Work" mainClass="">
+	<HeroSection title="Work" description="" cover="/work/Work_Cover" animation={true} />
+
+	<div class="reveal animate-revealContent section-padding pb-16 md:pb-24">
+		<ProjectTabs />
+		<div class="container grid select-none grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+			{projects.map((project) => <ProjectCard {...project} />)}
+		</div>
+	</div>
+</MainLayout>

@@ -1,0 +1,38 @@
+---
+import MainLayout from '@/layouts/main-layout.astro'
+import HeroCarousel from '@/features/projects/components/carousel/hero-carousel'
+import SliderCarousel from '@/features/projects/components/carousel/slider-carousel'
+
+import { getFeaturedProjects, getProjectsByCategory } from '@/lib/fetchers'
+
+const categories = [
+	{ key: 'installation', description: '', title: 'installations' },
+	{ key: 'documentary', description: '', title: 'documentary films' },
+	{ key: 'commercial', description: '', title: 'commercial projects' }
+]
+
+const featuredProjects = await getFeaturedProjects()
+
+const projectsByCategory = await Promise.all(
+	categories.map((category) => getProjectsByCategory(category.key))
+)
+---
+
+<MainLayout title="Home" mainClass="relative">
+	<HeroCarousel data={featuredProjects} client:load />
+
+	<div class="reveal animate-revealContent relative">
+		{
+			categories.map((category, index) => (
+				<SliderCarousel
+					data={projectsByCategory[index]}
+					title={category.title}
+					description={category.description}
+					lazy={true}
+					client:load
+					className={index === 0 ? 'pt-0 md:-mt-[200px] md:pt-0' : ''}
+				/>
+			))
+		}
+	</div>
+</MainLayout>
