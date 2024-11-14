@@ -1,7 +1,6 @@
 ---
 import { siteConfig } from '@/config/site'
 import '@/styles/globals.css'
-import { SpeedInsights } from '@vercel/speed-insights/react'
 
 interface Props {
 	title: string
@@ -47,5 +46,3 @@ const { title, description = siteConfig.description, image = '/og.jpg' } = Astro
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
-
-<SpeedInsights />

@@ -21,7 +21,7 @@ export default defineConfig({
 		tailwind()
 	],
 
-	output: 'server',
+	output: 'hybrid',
 	adapter: vercel({
 		webAnalytics: {
 			enabled: true
