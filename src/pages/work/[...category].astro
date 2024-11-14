@@ -7,21 +7,12 @@ import ProjectCard from '@/features/projects/components/project-card.astro'
 import HeroSection from '@/components/sections/hero-section.astro'
 
 export async function getStaticPaths() {
-	const projects = (await getCollection('work')) as {
-		data: { category: string; date: Date; excluded: boolean }
-	}[]
-	const uniqueCategories = [
-		...new Set(
-			projects
-				.filter((project) => !project.data.excluded) // Exclude projects marked as excluded
-				.map((project) => project.data.category)
-				.flat()
-		)
-	]
+	const allProjects = await getCollection('work')
+	const uniqueCategories = [...new Set(allProjects.map((project) => project.data.category).flat())]
 
 	return uniqueCategories.map((category) => {
-		const filteredProjects = projects
-			.filter((project) => project.data.category.includes(category) && !project.data.excluded) // Exclude projects marked as excluded
+		const filteredProjects = allProjects
+			.filter((project) => project.data.category.includes(category))
 			.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
 		return {
 			params: { category },
@@ -30,12 +21,12 @@ export async function getStaticPaths() {
 	})
 }
 
-const { category } = Astro.params
+const { category } = Astro.params as { category: string }
 const { projects } = Astro.props
 ---
 
 <MainLayout
-	title={`${capitalizer(category)} | Blog`}
+	title={`${capitalizer(category)}`}
 	description={`All projects for ${category} category`}
 >
 	<HeroSection title="Work" description="" cover="work/Work_Cover" animation={false} />

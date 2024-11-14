@@ -8,9 +8,10 @@ export async function getCategories() {
 }
 
 export async function getProjects() {
-	const projects = (await getCollection('work')).sort(
-		(a, b) => b.data.date.valueOf() - a.data.date.valueOf()
-	)
+	const projects = (await getCollection('work'))
+		.filter((project) => !project.data.excluded)
+		.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+
 	return projects
 }
 

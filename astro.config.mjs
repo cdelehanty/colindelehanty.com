@@ -20,6 +20,7 @@ export default defineConfig({
 		react(),
 		tailwind()
 	],
+
 	output: 'hybrid',
 	adapter: vercel({
 		analytics: true

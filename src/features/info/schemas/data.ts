@@ -166,13 +166,6 @@ export const infoConfig: InfoConfig = {
 			link: 'https://io9.gizmodo.com/over-200-miles-of-yosemite-backpacking-in-one-incredibl-1533575187'
 		},
 		{
-			title: "Time-lapse images' moving Yosemite views",
-			publication: 'San Francisco Chronicle',
-			type: 'Article',
-			year: 2012,
-			link: 'https://www.sfgate.com/art/article/Time-lapse-images-moving-Yosemite-views-3968311.php'
-		},
-		{
 			title: 'This Glorious Yosemite Time-Lapse Makes Us Want to Head to California Right Now',
 			publication: 'Petapixel',
 			type: 'Article',
@@ -192,6 +185,13 @@ export const infoConfig: InfoConfig = {
 			type: 'Article',
 			year: 2014,
 			link: 'https://www.vox.com/2014/2/28/11624046/heres-yosemite-hd-ii-the-stunning-sequel-to-a-viral-time-lapse-vid'
+		},
+		{
+			title: "Time-lapse images' moving Yosemite views",
+			publication: 'San Francisco Chronicle',
+			type: 'Article',
+			year: 2012,
+			link: 'https://www.sfgate.com/art/article/Time-lapse-images-moving-Yosemite-views-3968311.php'
 		},
 		{
 			title: "Yosemite's Most Spectacular Vistas in Photographs and Time-Lapse Video",
