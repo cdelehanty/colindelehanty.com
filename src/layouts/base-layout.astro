@@ -1,7 +1,7 @@
 ---
 import { cn } from '@/lib/utils'
 import BaseHead from '@/components/layout/base-head.astro'
-import SpeedInsightsWrapper from '@/components/speed-insights-wrapper'
+import SpeedInsights from '@vercel/speed-insights/astro'
 
 type Props = {
 	title: string
@@ -19,6 +19,6 @@ const { title, description, bodyClass } = Astro.props
 	</head>
 	<body class={cn('', bodyClass)}>
 		<slot />
-		<SpeedInsightsWrapper client:load />
+		<SpeedInsights />
 	</body>
 </html>
