@@ -34,7 +34,7 @@ export const FilmItemCard: React.FC<{ film: FilmItem }> = ({ film }) => {
 				<div className="flex h-full w-full items-center gap-3 px-6 py-4">
 					<div className="flex flex-col">
 						<div className="text-sm font-medium text-primary">{film.title}</div>
-						<span className="font-regular text-sm text-tertiary">Documentary</span>
+						<span className="font-regular text-sm text-tertiary">{film.category}</span>
 					</div>
 				</div>
 				<div className="hidden h-full w-full items-center px-6 py-4 text-sm font-medium capitalize text-secondary sm:flex">
