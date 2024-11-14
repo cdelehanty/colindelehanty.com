@@ -3,7 +3,7 @@ import { defineCollection, z } from 'astro:content'
 const work = defineCollection({
 	schema: ({ image }) =>
 		z.object({
-			category: z.string().optional(),
+			category: z.string(),
 			title: z.string().regex(/^[a-zA-Z0-9\s?.']+$/),
 			description: z.string(),
 			client: z.string().optional(),
@@ -20,8 +20,8 @@ const work = defineCollection({
 					text: z.string()
 				})
 				.optional(),
-			featured: z.boolean().optional(),
-			excluded: z.boolean().optional()
+			featured: z.boolean(),
+			excluded: z.boolean()
 		})
 })
 

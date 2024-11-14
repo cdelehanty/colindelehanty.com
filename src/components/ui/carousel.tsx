@@ -4,9 +4,9 @@ import React, { forwardRef, useCallback, useContext, useEffect, useState } from 
 import { Button } from '@/components/ui/button'
 import type { EmblaOptionsType } from 'embla-carousel'
 import useEmblaCarousel from 'embla-carousel-react'
-import { ChevronRightIcon } from 'lucide-react'
+import { ChevronRightIcon } from '@/components/icons'
+import { ChevronLeftIcon } from '@/components/icons'
 import { cn } from '@/lib/utils'
-import { ChevronLeftIcon } from '@radix-ui/react-icons'
 import { createContext } from 'react'
 
 type CarouselContextProps = {

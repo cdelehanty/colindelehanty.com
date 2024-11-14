@@ -1,17 +1,12 @@
+import { defineConfig } from 'astro/config'
 import react from '@astrojs/react'
 import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
 import tailwind from '@astrojs/tailwind'
 import vercel from '@astrojs/vercel/serverless'
-import icon from 'astro-icon'
-import { defineConfig } from 'astro/config'
-import simpleStackForm from 'simple-stack-form'
 
 // https://astro.build/config
 export default defineConfig({
-	devToolbar: {
-		enabled: false
-	},
 	site: 'https://colindelehanty.com',
 	integrations: [
 		mdx({
@@ -21,13 +16,9 @@ export default defineConfig({
 			},
 			gfm: true
 		}),
-		icon(),
 		sitemap(),
 		react(),
-		tailwind({
-			applyBaseStyles: false
-		}),
-		simpleStackForm()
+		tailwind()
 	],
 	output: 'hybrid',
 	adapter: vercel({

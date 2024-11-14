@@ -7,7 +7,7 @@ export const siteConfig: SiteConfig = {
 	icon: 'CD',
 	description: '',
 	url: 'https://colindelehanty.com',
-	ogImage: '',
+	ogImage: '/public/og.jpg',
 	links: {
 		twitter: 'https://twitter.com/cdelehanty',
 		github: 'https://github.com/cdelehanty'
@@ -32,14 +32,14 @@ export const footerLinks: SidebarNavItem[] = [
 		href: '/work',
 		items: await getCategoryLinks()
 	},
-	{
-		title: 'Archives',
-		items: [
-			{ title: '2013-2015', href: '#' },
-			{ title: '2016-2018', href: '#' },
-			{ title: '2019-2021', href: '#' }
-		]
-	},
+	// {
+	// 	title: 'Archives',
+	// 	items: [
+	// 		{ title: '2013-2015', href: '#' },
+	// 		{ title: '2016-2018', href: '#' },
+	// 		{ title: '2019-2021', href: '#' }
+	// 	]
+	// },
 	{
 		title: 'About',
 		href: '/about',
@@ -56,7 +56,7 @@ export const footerLinks: SidebarNavItem[] = [
 			{ title: 'LinkedIn', href: 'https://www.linkedin.com/in/cdelehanty/' },
 			{ title: 'Instagram', href: 'https://www.instagram.com/cdelehanty/' },
 			// { title: 'Twitter', href: 'https://x.com/cdelehanty' },
-			// { title: 'Github', href: 'https://github.com/cdelehanty' },
+			{ title: 'Github', href: 'https://github.com/cdelehanty' },
 			// { title: 'Artstation', href: 'https://www.artstation.com/cdelehanty' },
 			{ title: 'Vimeo', href: 'https://vimeo.com/cdelehanty' }
 		]

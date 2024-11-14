@@ -20,7 +20,7 @@ yarn-error.log*
 pnpm-debug.log*
 
 # Prettier config (if auto-generated or user-specific)
-.prettierignore
+.prettierrc.json
 .prettierrc
 
 # IDE-specific files (e.g., VSCode settings)
