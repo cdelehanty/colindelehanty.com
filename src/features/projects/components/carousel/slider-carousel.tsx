@@ -21,8 +21,8 @@ interface DataItem {
 		video?: string
 		category?: string
 		description?: string
-		slug?: string
 	}
+	slug?: string
 }
 
 interface SliderCarouselProps {
@@ -92,7 +92,7 @@ const SliderCarousel: React.FC<SliderCarouselProps> = ({
 								className="relative flex max-w-full basis-4/5 flex-col pr-3 md:basis-1/2 lg:basis-1/3 2xl:pr-3"
 							>
 								<a
-									href={`/work/${dataItem.data.slug}/`}
+									href={`/work/${dataItem.slug}/`}
 									className="relative w-full overflow-hidden rounded-sm after:absolute after:bottom-0 after:left-0 after:h-full after:w-full after:bg-gradient-to-b after:from-transparent after:via-transparent after:via-65% after:to-black/25 after:transition-colors after:duration-300 after:hover:bg-black/25"
 								>
 									{/* Commented out AdvancedImage for development */}
