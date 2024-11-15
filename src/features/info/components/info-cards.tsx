@@ -70,7 +70,7 @@ export const MiscItemCard: React.FC<{ misc: MiscItem }> = ({ misc }) => {
 				<div className="hidden h-full w-full items-center px-6 py-4 text-sm sm:flex">
 					<span className="font-medium capitalize text-secondary">{misc.type}</span>
 				</div>
-				<div className="flex h-full w-full items-center justify-center px-6 py-4 text-sm font-medium text-secondary">
+				<div className="hidden h-full w-full items-center justify-center px-6 py-4 text-sm font-medium text-secondary xs:flex">
 					{misc.year}
 				</div>
 				<a

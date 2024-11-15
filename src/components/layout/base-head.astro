@@ -1,5 +1,6 @@
 ---
 import { siteConfig } from '@/config/site'
+import { ViewTransitions } from 'astro:transitions'
 import '@/styles/globals.css'
 
 interface Props {
@@ -46,3 +47,5 @@ const { title, description = siteConfig.description, image = '/og.jpg' } = Astro
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+<ViewTransitions />
