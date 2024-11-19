@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useRef } from 'react'
 import {
 	Carousel,
 	CarouselMainContainer,
@@ -8,7 +8,6 @@ import {
 	CarouselPrevious,
 	CarouselNext
 } from '@/components/ui/carousel'
-import Player from '@vimeo/player'
 
 interface MediaData {
 	src: string
@@ -22,65 +21,7 @@ interface MDXCarouselProps {
 }
 
 const MDXCarousel: React.FC<MDXCarouselProps> = ({ isFirstChild, media }) => {
-	const [players, setPlayers] = useState<Player[]>([])
 	const iframeRefs = useRef<(HTMLIFrameElement | null)[]>([])
-	const [activeIndex, setActiveIndex] = useState<number>(0)
-
-	// Helper function to get Vimeo embed URL with all necessary parameters
-	const getVimeoEmbedUrl = (videoId: string) => {
-		const baseUrl = `https://player.vimeo.com/video/${videoId}`
-		const params = new URLSearchParams({
-			dnt: '1',
-			sharing: '0',
-			title: '0',
-			byline: '0',
-			portrait: '0',
-			sidedock: '0',
-			controls: '1',
-			like: '0',
-			embed: '0',
-			watchlater: '0'
-		})
-		return `${baseUrl}?${params.toString()}`
-	}
-
-	useEffect(() => {
-		const newPlayers: Player[] = []
-
-		iframeRefs.current.forEach((iframe, index) => {
-			if (iframe) {
-				const player = new Player(iframe)
-				newPlayers[index] = player
-
-				player.on('play', () => {
-					newPlayers.forEach((otherPlayer, otherIndex) => {
-						if (otherIndex !== index) {
-							otherPlayer?.pause().catch(console.error)
-						}
-					})
-				})
-
-				player.on('error', (error) => {
-					console.error('Vimeo player error:', error)
-				})
-			}
-		})
-
-		setPlayers(newPlayers)
-
-		return () => {
-			newPlayers.forEach((player) => {
-				player?.destroy().catch(console.error)
-			})
-		}
-	}, [])
-
-	const handleSlideChange = async (index: number) => {
-		setActiveIndex(index)
-		players.forEach((player) => {
-			player?.pause().catch(console.error)
-		})
-	}
 
 	const NavigationButtons = () => (
 		<div
@@ -95,7 +36,7 @@ const MDXCarousel: React.FC<MDXCarouselProps> = ({ isFirstChild, media }) => {
 		<Carousel
 			carouselOptions={{ align: 'center', loop: true, startIndex: 1 }}
 			orientation="horizontal"
-			className={`mt-24 select-none overflow-hidden ${isFirstChild ? 'my-0' : ''}`}
+			className={`my-32 select-none overflow-hidden ${isFirstChild ? 'my-0' : ''}`}
 		>
 			{!isFirstChild && <NavigationButtons />}
 
@@ -103,23 +44,24 @@ const MDXCarousel: React.FC<MDXCarouselProps> = ({ isFirstChild, media }) => {
 				{media.map((item, index) => (
 					<SliderMainItem
 						key={item.src}
-						className={`container flex max-w-full basis-4/5 cursor-grab flex-col px-1 pb-24 2xl:basis-full ${index === 0 ? '' : ''}`}
-						onClick={() => handleSlideChange(index)}
+						className="container flex max-w-full basis-4/5 cursor-grab flex-col px-1 2xl:basis-full"
 					>
 						<div className="relative w-full rounded-lg">
 							<iframe
 								ref={(el) => (iframeRefs.current[index] = el)}
 								className="aspect-video h-auto w-full 2xl:rounded-md"
-								src={getVimeoEmbedUrl(item.src)}
+								src={`https://player.vimeo.com/video/${item.src}?dnt=1&sharing=0&title=0&byline=0&portrait=0&sidedock=0&controls=1&like=0&embed=0&watchlater=0`}
 								loading="lazy"
-								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+								allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 								referrerPolicy="strict-origin-when-cross-origin"
 								title={item.alt}
 								allowFullScreen
 							/>
 						</div>
 						{item.description && (
-							<p className="mx-3 mt-3 text-sm text-tertiary md:mx-4 md:mt-4">{item.description}</p>
+							<p className="mx-3 mt-3 text-sm text-tertiary md:mx-4 md:mt-4">
+								{item.description}
+							</p>
 						)}
 					</SliderMainItem>
 				))}

@@ -1,14 +1,23 @@
 ---
 import MainLayout from '@/layouts/main-layout.astro'
 import HeroSection from '@/components/sections/hero-section.astro'
-import HeaderSection from '@/components/sections/header-section.astro'
-import { InfoTabs } from '@/features/info/components/info-tabs'
+import { MdxComponents } from '@/components/content/mdx-components'
+import { ClientSection } from '@/features/clients/components/client-section'
+
+const bioContent = await import('@/content/about/bio.mdx')
 ---
 
 <MainLayout title="About" mainClass="">
 	<HeroSection
 		title="About"
-		description="Lorem ipsum odor amet, consectetuer adipiscing elit. Libero nascetur praesent viverra tincidunt id magna per tincidunt. Mi pellentesque id sagittis tortor quisque molestie. Dolor elementum justo nostra maximus ac felis. Turpis diam nunc at ullamcorper cubilia at dis. Enim dignissim ante vel sem aliquet elementum. Dapibus etiam laoreet aliquet facilisis; accumsan ut augue consequat aliquet."
+		description={`
+			I believe perspective has the power to unlock greater meaning, 
+			adding depth and color to even the most familiar. 
+			Through a range of visual mediums, including photography, 
+			film, and time-lapse, I explore my curiosity and fascination 
+			with the creativity of life, revealing new perspectives and 
+			inspiring growth.
+		`}
 		primary={{
 			text: 'View Resume',
 			href: 'https://res.cloudinary.com/dzsswr2ti/image/upload/ColinDelehanty_Resume.pdf'
@@ -20,11 +29,8 @@ import { InfoTabs } from '@/features/info/components/info-tabs'
 		cover="about/About_Cover"
 		animation={true}
 	/>
-	<HeaderSection
-		title="Cursus lobortis orci"
-		description="Lorem ipsum odor amet, consectetuer adipiscing elit."
-		className="reveal animate-revealContent pb-16"
-	>
-		<InfoTabs slot="section-content" client:load />
-	</HeaderSection>
+	<section class="reveal animate-revealContent relative">
+		<bioContent.default components={MdxComponents} />
+		<ClientSection client:load />
+	</section>
 </MainLayout>

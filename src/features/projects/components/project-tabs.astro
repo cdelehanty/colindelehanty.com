@@ -10,7 +10,7 @@ const { category } = Astro.params
 
 {
 	categories?.length ? (
-		<ul class="container mb-12 flex w-full select-none items-center gap-3 overflow-auto">
+		<ul class="container mb-12 flex w-full items-center gap-3 overflow-auto">
 			<li class="">
 				<a
 					href={`/work`}
@@ -21,7 +21,7 @@ const { category } = Astro.params
 							size: 'sm',
 							rounded: 'full'
 						}),
-						'w-max select-none'
+						'w-max'
 					)}
 				>
 					All projects
@@ -33,7 +33,7 @@ const { category } = Astro.params
 						href={`/work/${item}`}
 						class={cn(
 							'capitalize',
-							item === category ? 'select-none' : '',
+							item === category ? '' : '',
 							buttonVariants({
 								variant: item === category ? 'secondary' : 'link',
 								size: 'sm',

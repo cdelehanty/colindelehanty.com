@@ -28,7 +28,11 @@ import MDXVideoCarousel from '../../components/content/mdx-video-carousel.tsx'
 	isFirstChild={true}
 />
 
-<MDXInfo date={frontmatter.date} client={frontmatter.client} role={frontmatter.role} />
+<MDXInfo
+	date={frontmatter.date}
+	client={frontmatter.client}
+	role={frontmatter.role}
+/>
 
 <MDXContainer containerType="header">
 
@@ -37,10 +41,11 @@ import MDXVideoCarousel from '../../components/content/mdx-video-carousel.tsx'
 </MDXContainer>
 
 <MDXContainer containerType="text">
-	This unique experience conincided with Mars being it's closest to Earth in 15 years and the
-	longest lunar eclipse of the 21st century. Working with the two hosts of the event and a small
-	film crew, I captured day-to-night time-lapses and footage during our private tour of GTC which
-	was used by Airbnb to promote the upcoming experience.
+	This unique experience conincided with Mars being it's closest to Earth in 15
+	years and the longest lunar eclipse of the 21st century. Working with the two
+	hosts of the event and a small film crew, I captured day-to-night time-lapses
+	and footage during our private tour of GTC which was used by Airbnb to promote
+	the upcoming experience.
 </MDXContainer>
 
 <MDXVideoCarousel
@@ -68,5 +73,5 @@ import MDXVideoCarousel from '../../components/content/mdx-video-carousel.tsx'
 />
 
 <MDXContainer containerType="footer">
-	<MDXList title="Team" items="Pete Betancourt" />
+	<MDXList title="Team" items="Director - Pete Betancourt" />
 </MDXContainer>

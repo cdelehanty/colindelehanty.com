@@ -1,14 +1,16 @@
 ---
 category: installation
 title: 88 Kearny
-description: Time-lapses commissioned by Gensler for the Fog City module in their digital art experience at 88 Kearny Street in downtown San Francisco.
+description:
+  Time-lapses commissioned by Gensler for the Fog City module in their digital
+  art experience at 88 Kearny Street in downtown San Francisco.
 client: Gensler
 date: 2021-01-06
 role: Photographer
 
 # Media references
 cover: work/88Kearny/88Kearny_Cover
-video: /video/FogCity_Video.mp4
+video: work/88Kearny/88Kearny_Video
 
 # External links
 link:
@@ -22,7 +24,12 @@ excluded: false
 
 import MDXVideoCarousel from '../../components/content/mdx-video-carousel.tsx'
 
-<MDXVideo src="1028030233" description="" videoType="vimeo" isFirstChild={true} />
+<MDXVideo
+	src="1028030233"
+	description=""
+	videoType="vimeo"
+	isFirstChild={true}
+/>
 
 <MDXInfo year="2020-21" client={frontmatter.client} role={frontmatter.role} />
 

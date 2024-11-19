@@ -10,14 +10,23 @@ interface Props {
 	height: number
 	className?: string
 }
-const { src, description, alt, className, height, width, ...attrs } = Astro.props
+const { src, description, alt, className, height, width, ...attrs } =
+	Astro.props
 ---
 
-<div class="mdx-padding my-10 2xl:container md:my-16">
-	<CldImage class={cn('rounded-sm', className)} width={width} height={height} src={src} alt={alt} />
+<div class="mdx-padding my-10 2xl:container md:my-24">
+	<CldImage
+		class={cn('rounded-sm', className)}
+		width={width}
+		height={height}
+		src={src}
+		alt={alt}
+	/>
 	{
 		description && (
-			<p class="mt-2 max-w-screen-md text-sm text-foreground-quaternary">{description}</p>
+			<p class="mt-2 max-w-screen-md text-sm text-foreground-quaternary">
+				{description}
+			</p>
 		)
 	}
 </div>

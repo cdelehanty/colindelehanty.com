@@ -6,7 +6,6 @@ import { buttonVariants } from '../ui/button'
 
 export interface HeaderSectionProps {
 	title?: string
-	subtitle?: string
 	category?: string
 	description?: string
 	cover?: string
@@ -22,15 +21,18 @@ export interface HeaderSectionProps {
 	animation?: boolean
 }
 
-const { title, subtitle, category, description, cover, primary, secondary, animation } = Astro.props
+const { title, category, description, cover, primary, secondary, animation } =
+	Astro.props
 ---
 
 <!-- Section container with optional cover image and content -->
-<section class="section-padding pointer-events-none z-20 pb-16 pt-30 md:pb-24 md:pt-[152px]">
+<section
+	class="section-padding pointer-events-none z-20 pb-16 pt-30 md:pb-20 md:pt-[184px]"
+>
 	{
 		cover && (
 			<div
-				class={`${animation ? 'animate-fade fade' : ''} absolute inset-0 -z-10 flex h-[640px] w-full justify-center overflow-hidden after:absolute after:bottom-0 after:left-0 after:h-full after:w-full after:bg-gradient-to-t after:from-black after:to-transparent`}
+				class={`${animation ? 'animate-fade fade' : ''} absolute inset-0 -z-10 flex h-[640px] w-full select-none justify-center overflow-hidden after:absolute after:bottom-0 after:left-0 after:h-full after:w-full after:bg-gradient-to-t after:from-black after:to-transparent`}
 			>
 				<CldImage
 					src={cover}
@@ -42,21 +44,17 @@ const { title, subtitle, category, description, cover, primary, secondary, anima
 					}}
 					class="absolute h-full w-full object-cover object-center"
 				/>
-
-				{/* <img
-					src={`/${cover.includes('png') ? `${cover}.png` : `${cover}.jpg`}`}
-					alt={title || 'Cover Image'}
-					class="absolute h-full w-full object-cover"
-				/> */}
 			</div>
 		)
 	}
-	<!-- Main content header with title, subtitle, and description -->
+	<!-- Header with title, description, and buttons -->
 	<header class="container flex flex-col gap-6 md:gap-8">
-		<div class="flex max-w-lg flex-col md:max-w-2xl 2xl:max-w-3xl">
+		<div class="flex flex-col md:max-w-2xl">
 			{
 				category && (
-					<Label className={`${animation ? 'animate-revealHero1 reveal capitalize' : ''}`}>
+					<Label
+						className={`${animation ? 'animate-revealHero1 reveal capitalize' : ''}`}
+					>
 						{category}
 					</Label>
 				)
@@ -85,7 +83,9 @@ const { title, subtitle, category, description, cover, primary, secondary, anima
 
 		{
 			(primary?.href || secondary?.href) && (
-				<div class={`flex gap-2 max-xs:flex-col ${animation ? 'animate-revealHero3 reveal' : ''}`}>
+				<div
+					class={`flex gap-2 max-xs:flex-col ${animation ? 'animate-revealHero3 reveal' : ''}`}
+				>
 					{primary && (
 						<a
 							href={primary.href}

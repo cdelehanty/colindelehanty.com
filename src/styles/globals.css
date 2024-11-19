@@ -192,6 +192,117 @@ body {
 	}
 }
 
+@keyframes translateY-1 {
+	0%,
+	20% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+	25%,
+	30% {
+		transform: translateY(2.5rem);
+		opacity: 0;
+	}
+	35%,
+	55% {
+		transform: translateY(2.5rem);
+		opacity: 0;
+	}
+	60%,
+	65% {
+		transform: translateY(-2.5rem);
+		opacity: 0;
+	}
+	70%,
+	90% {
+		transform: translateY(-2.5rem);
+		opacity: 0;
+	}
+	95%,
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes translateY-2 {
+	0%,
+	20% {
+		transform: translateY(2.5rem);
+		opacity: 0;
+	}
+	25%,
+	30% {
+		transform: translateY(-2.5rem);
+		opacity: 0;
+	}
+	35%,
+	55% {
+		transform: translateY(-2.5rem);
+		opacity: 0;
+	}
+	60%,
+	65% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+	70%,
+	90% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+	95%,
+	100% {
+		transform: translateY(2.5rem);
+		opacity: 0;
+	}
+}
+
+@keyframes translateY-3 {
+	0%,
+	20% {
+		transform: translateY(-2.5rem);
+		opacity: 0;
+	}
+	25%,
+	30% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+	35%,
+	55% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+	60%,
+	65% {
+		transform: translateY(2.5rem);
+		opacity: 0;
+	}
+	70%,
+	90% {
+		transform: translateY(2.5rem);
+		opacity: 0;
+	}
+	95%,
+	100% {
+		transform: translateY(-2.5rem);
+		opacity: 0;
+	}
+}
+
+.animate-translateY-1 {
+	animation: translateY-1 16s ease-in-out infinite;
+}
+
+.animate-translateY-2 {
+	animation: translateY-2 16s ease-in-out infinite;
+}
+
+.animate-translateY-3 {
+	animation: translateY-3 16s ease-in-out infinite;
+}
+
 .reveal {
 	transform: translateY(100px);
 	opacity: 0;
@@ -233,9 +344,9 @@ body {
 }
 
 .transform-gpu {
-	transform: translate3d(var(--tw-translate-x), var(--tw-translate-y), 0) rotate(var(--tw-rotate))
-		skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x))
-		scaleY(var(--tw-scale-y));
+	transform: translate3d(var(--tw-translate-x), var(--tw-translate-y), 0)
+		rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+		scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .animate-fade {

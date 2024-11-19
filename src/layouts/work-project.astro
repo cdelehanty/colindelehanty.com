@@ -10,12 +10,11 @@ const { title, description } = data
 	<HeroSection
 		category={data.category}
 		title={data.title}
-		subtitle={data.subtitle}
 		description={data.description}
 		cover={data.cover}
 		primary={{
-			text: data.link?.text, // Use optional chaining and provide a default
-			href: data.link?.href // Use optional chaining and provide a default
+			text: data.link?.text,
+			href: data.link?.href
 		}}
 		slug={slug}
 		slug={slug}

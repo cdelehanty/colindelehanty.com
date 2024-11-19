@@ -8,15 +8,20 @@ import HeroSection from '@/components/sections/hero-section.astro'
 
 export async function getStaticPaths() {
 	const allProjects = await getCollection('work')
-	const uniqueCategories = [...new Set(allProjects.map((project) => project.data.category).flat())]
+	const filteredProjects = allProjects.filter(
+		(project) => !project.data.excluded
+	)
+	const uniqueCategories = [
+		...new Set(filteredProjects.map((project) => project.data.category).flat())
+	]
 
 	return uniqueCategories.map((category) => {
-		const filteredProjects = allProjects
+		const categoryProjects = filteredProjects
 			.filter((project) => project.data.category.includes(category))
 			.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
 		return {
 			params: { category },
-			props: { projects: filteredProjects }
+			props: { projects: categoryProjects }
 		}
 	})
 }
@@ -29,11 +34,23 @@ const { projects } = Astro.props
 	title={`${capitalizer(category)}`}
 	description={`All projects for ${category} category`}
 >
-	<HeroSection title="Work" description="" cover="work/Work_Cover" animation={false} />
+	<HeroSection
+		title="Images with Scale and Perspective"
+		description={`
+			The result of years of work as a photographer 
+			and filmmaker specializing in time-lapse photography. Learn 
+			more about the projects I worked on with clients 
+			looking to connect us to something greater.
+		`}
+		cover="/work/Work_Cover"
+		animation={false}
+	/>
 
 	<div class="section-padding pb-16 md:pb-24">
 		<ProjectTabs />
-		<div class="container grid select-none grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+		<div
+			class="container grid select-none grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3"
+		>
 			{projects.map((project) => <ProjectCard {...project} />)}
 		</div>
 	</div>

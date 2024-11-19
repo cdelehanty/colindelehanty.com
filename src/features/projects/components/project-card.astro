@@ -20,7 +20,7 @@ const { title, subtitle, category, cover } = projectData || {}
 						}}
 						src={cover}
 						alt={title}
-						class={`absolute transition-transform duration-300 ${scaleTransition ? 'hover:scale-105' : ''}`}
+						class={`absolute select-none transition-transform duration-300 ${scaleTransition ? 'hover:scale-105' : ''}`}
 					/>
 					// <img
 					// 	width="630"
@@ -38,7 +38,13 @@ const { title, subtitle, category, cover } = projectData || {}
 				<span class="text-xs font-normal capitalize">{category}</span>
 				<div class="mt-6 flex flex-col">
 					<div class="truncate text-lg font-normal text-primary">{title}</div>
-					{subtitle && <span class="truncate text-lg font-normal text-primary">{subtitle}</span>}
+					{
+						subtitle && (
+							<span class="truncate text-lg font-normal text-primary">
+								{subtitle}
+							</span>
+						)
+					}
 				</div>
 			</div>
 		</div>

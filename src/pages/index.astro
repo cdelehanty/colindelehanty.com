@@ -28,6 +28,7 @@ const projectsByCategory = await Promise.all(
 					data={projectsByCategory[index]}
 					title={category.title}
 					description={category.description}
+					href={category.key}
 					lazy={true}
 					client:load
 					className={index === 0 ? 'pt-0 md:-mt-[200px] md:pt-0' : ''}

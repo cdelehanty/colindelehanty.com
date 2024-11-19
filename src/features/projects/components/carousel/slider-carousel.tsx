@@ -30,6 +30,7 @@ interface SliderCarouselProps {
 	className?: string
 	title: string
 	description?: string
+	href?: string
 	lazy?: boolean
 }
 
@@ -44,6 +45,7 @@ const SliderCarousel: React.FC<SliderCarouselProps> = ({
 	className,
 	title,
 	description,
+	href,
 	lazy = true
 }) => {
 	return (
@@ -58,7 +60,7 @@ const SliderCarousel: React.FC<SliderCarouselProps> = ({
 			>
 				<div className="container flex items-center justify-between py-3 text-primary">
 					<header className="flex h-10 w-full flex-col justify-center">
-						<a href={`/work/${title}`}>
+						<a href={`/work/${href}`}>
 							<h2 className="text-lg font-semibold capitalize text-brand-secondary md:text-xl">
 								{title}
 							</h2>

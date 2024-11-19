@@ -16,9 +16,17 @@ excluded: false
 
 import MDXVideoCarousel from '../../components/content/mdx-video-carousel.tsx'
 
-<MDXVideo videoType="youtube" src="qvFaaC5Csms?si=cblnqSlsT2a_M7hJ" isFirstChild={true} />
+<MDXVideo
+	videoType="youtube"
+	src="qvFaaC5Csms?si=cblnqSlsT2a_M7hJ"
+	isFirstChild={true}
+/>
 
-<MDXInfo date={frontmatter.date} client={frontmatter.client} role={frontmatter.role} />
+<MDXInfo
+	date={frontmatter.date}
+	client={frontmatter.client}
+	role={frontmatter.role}
+/>
 
 <MDXContainer containerType="header">
 	
@@ -27,10 +35,12 @@ import MDXVideoCarousel from '../../components/content/mdx-video-carousel.tsx'
 </MDXContainer>
 
 <MDXContainer containerType="text">
-	Director, Ben Masters, approached me with a documentary film project he was developing with the
-	working title, "The State of Texas Wildlife". This film would explore the current state of public
-	and private land management in Texas. The goal for this 2-month shoot was to document Texas lands
-	using time-lapse photography. I shot, edited and delivered 80 time-lapses for this project.
+	Director, Ben Masters, approached me with a documentary film project he was
+	developing with the working title, "The State of Texas Wildlife". This film
+	would explore the current state of public and private land management in
+	Texas. The goal for this 2-month shoot was to document Texas lands using
+	time-lapse photography. I shot, edited and delivered 80 time-lapses for this
+	project.
 </MDXContainer>
 
 <MDXVideoCarousel
@@ -85,6 +95,9 @@ import MDXVideoCarousel from '../../components/content/mdx-video-carousel.tsx'
 />
 
 <MDXContainer containerType="footer">
-	<MDXList title="Director" items="Ben Masters" />
-	<MDXList title="Cinematographer" items="Colin Delehanty" />
+	<MDXList
+		title="Credits"
+		items="Director - Ben Masters
+	Cinematographer - Colin Delehanty"
+	/>
 </MDXContainer>

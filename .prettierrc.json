@@ -3,7 +3,7 @@
 	"singleQuote": true,
 	"trailingComma": "none",
 	"semi": false,
-	"printWidth": 100,
+	"printWidth": 80,
 	"htmlWhitespaceSensitivity": "ignore",
 	"plugins": ["prettier-plugin-astro", "prettier-plugin-tailwindcss"],
 	"pluginSearchDirs": false

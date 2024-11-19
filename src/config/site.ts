@@ -15,8 +15,12 @@ export const siteConfig: SiteConfig = {
 }
 
 async function getCategoryLinks() {
-	const projects = (await getCollection('work')) as { data: { category: string } }[]
-	const uniqueCategories = [...new Set(projects.map((project) => project.data.category).flat())]
+	const projects = (await getCollection('work')) as {
+		data: { category: string }
+	}[]
+	const uniqueCategories = [
+		...new Set(projects.map((project) => project.data.category).flat())
+	]
 
 	const sortedCategories = uniqueCategories.sort((a, b) => a.localeCompare(b))
 
@@ -56,9 +60,10 @@ export const footerLinks: SidebarNavItem[] = [
 			{ title: 'LinkedIn', href: 'https://www.linkedin.com/in/cdelehanty/' },
 			{ title: 'Instagram', href: 'https://www.instagram.com/cdelehanty/' },
 			// { title: 'Twitter', href: 'https://x.com/cdelehanty' },
-			{ title: 'Github', href: 'https://github.com/cdelehanty' },
 			// { title: 'Artstation', href: 'https://www.artstation.com/cdelehanty' },
-			{ title: 'Vimeo', href: 'https://vimeo.com/cdelehanty' }
+			{ title: 'IMDb', href: 'https://www.imdb.com/name/nm7277459' },
+			{ title: 'Vimeo', href: 'https://vimeo.com/cdelehanty' },
+			{ title: 'Github', href: 'https://github.com/cdelehanty' }
 		]
 	}
 	// {

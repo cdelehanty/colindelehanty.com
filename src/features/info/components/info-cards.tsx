@@ -37,7 +37,7 @@ export const FilmItemCard: React.FC<{ film: FilmItem }> = ({ film }) => {
 						<span className="font-regular text-sm text-tertiary">{film.category}</span>
 					</div>
 				</div>
-				<div className="hidden h-full w-full items-center px-6 py-4 text-sm font-medium capitalize text-secondary sm:flex">
+				<div className="hidden h-full w-full items-center px-6 py-4 text-sm font-medium capitalize text-secondary max-lg:justify-center sm:flex">
 					<span>{film.role}</span>
 				</div>
 				<div className="hidden h-full w-full items-center justify-center px-6 py-4 text-sm font-medium text-secondary xs:flex">
@@ -67,7 +67,7 @@ export const MiscItemCard: React.FC<{ misc: MiscItem }> = ({ misc }) => {
 					<div className="line-clamp-1 text-sm font-medium text-primary">{misc.title}</div>
 					<span className="font-regular text-sm text-tertiary">{misc.publication}</span>
 				</div>
-				<div className="hidden h-full w-full items-center px-6 py-4 text-sm sm:flex">
+				<div className="hidden h-full w-full items-center px-6 py-4 text-sm max-lg:justify-center sm:flex">
 					<span className="font-medium capitalize text-secondary">{misc.type}</span>
 				</div>
 				<div className="hidden h-full w-full items-center justify-center px-6 py-4 text-sm font-medium text-secondary xs:flex">

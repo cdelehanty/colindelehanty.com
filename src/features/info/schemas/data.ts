@@ -3,6 +3,9 @@ import type { InfoConfig, ClientItem, FilmItem, MiscItem } from './info'
 export const infoConfig: InfoConfig = {
 	clientData: [
 		{
+			name: 'Mountain Hardware'
+		},
+		{
 			name: 'Apple',
 			logo: 'about/Apple_Logo',
 			projects: [
@@ -16,7 +19,9 @@ export const infoConfig: InfoConfig = {
 		{
 			name: 'Gensler',
 			logo: 'about/Gensler_Logo',
-			projects: [{ cover: 'work/FogCity_Cover', title: '88 Kearny', slug: '88-kearny' }]
+			projects: [
+				{ cover: 'work/FogCity_Cover', title: '88 Kearny', slug: '88-kearny' }
+			]
 		},
 		{
 			name: 'Obscura Digital',
@@ -33,6 +38,33 @@ export const infoConfig: InfoConfig = {
 					slug: 'mgm-cotai'
 				}
 			]
+		},
+		{
+			name: 'MGM Resorts'
+		},
+		{
+			name: 'American Express'
+		},
+		{
+			name: 'BorrowLenses'
+		},
+		{
+			name: 'MSG Sphere'
+		},
+		{
+			name: 'Time'
+		},
+		{
+			name: 'Matador Network'
+		},
+		{
+			name: 'Vimeo'
+		},
+		{
+			name: 'Planet Granite'
+		},
+		{
+			name: 'Salesforce'
 		},
 		{
 			name: 'Airbnb',
@@ -159,28 +191,32 @@ export const infoConfig: InfoConfig = {
 			link: 'https://www.nationalgeographic.com/adventure/article/140309-yosemite-national-park-time-lapse-video'
 		},
 		{
-			title: 'Over 200 Miles of Yosemite Backpacking in One Incredible Time-lapse',
+			title:
+				'Over 200 Miles of Yosemite Backpacking in One Incredible Time-lapse',
 			publication: 'io9',
 			type: 'Article',
 			year: 2014,
 			link: 'https://io9.gizmodo.com/over-200-miles-of-yosemite-backpacking-in-one-incredibl-1533575187'
 		},
 		{
-			title: 'This Glorious Yosemite Time-Lapse Makes Us Want to Head to California Right Now',
+			title:
+				'This Glorious Yosemite Time-Lapse Makes Us Want to Head to California Right Now',
 			publication: 'Petapixel',
 			type: 'Article',
 			year: 2014,
 			link: 'http://petapixel.com/2014/03/04/glorious-yosemite-time-lapse-makes-us-want-head-straight-california/'
 		},
 		{
-			title: "Incredibly Beautiful Yosemite Time-Lapse Video Reminds Us What We're Protecting",
+			title:
+				"Incredibly Beautiful Yosemite Time-Lapse Video Reminds Us What We're Protecting",
 			publication: 'The Huffington Post',
 			type: 'Article',
 			year: 2014,
 			link: 'http://www.huffingtonpost.com/2014/03/03/yosemite-time-lapse-video_n_4892441'
 		},
 		{
-			title: "Here's 'Yosemite HD II': The Stunning Sequel to a Viral Time-Lapse Vid",
+			title:
+				"Here's 'Yosemite HD II': The Stunning Sequel to a Viral Time-Lapse Vid",
 			publication: 'Vox',
 			type: 'Article',
 			year: 2014,
@@ -194,7 +230,8 @@ export const infoConfig: InfoConfig = {
 			link: 'https://www.sfgate.com/art/article/Time-lapse-images-moving-Yosemite-views-3968311.php'
 		},
 		{
-			title: "Yosemite's Most Spectacular Vistas in Photographs and Time-Lapse Video",
+			title:
+				"Yosemite's Most Spectacular Vistas in Photographs and Time-Lapse Video",
 			publication: 'The Atlantic',
 			type: 'Article',
 			year: 2012,
