@@ -147,6 +147,7 @@ body {
 }
 
 @layer base {
+	/* Soehne Leicht (Light) */
 	@font-face {
 		font-family: 'soehne';
 		src: url('/fonts/soehne-leicht.woff2') format('woff2');
@@ -155,6 +156,7 @@ body {
 		font-display: swap;
 	}
 
+	/* Soehne Buch (Regular) */
 	@font-face {
 		font-family: 'soehne';
 		src: url('/fonts/soehne-buch.woff2') format('woff2');
@@ -163,6 +165,7 @@ body {
 		font-display: swap;
 	}
 
+	/* Soehne Halbfett (Medium) */
 	@font-face {
 		font-family: 'soehne';
 		src: url('/fonts/soehne-halbfett.woff2') format('woff2');

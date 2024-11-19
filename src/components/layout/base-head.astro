@@ -11,27 +11,51 @@ interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 
-const { title, description = siteConfig.description, image = '/og.jpg' } = Astro.props
+const {
+	title,
+	description = siteConfig.description,
+	image = '/og.jpg'
+} = Astro.props
 ---
 
-<!-- Global Metadata -->
+<!-- Font preloads with correct attributes -->
+<link
+	rel="preload"
+	href="/fonts/soehne-buch.woff2"
+	as="font"
+	type="font/woff2"
+	crossorigin="anonymous"
+/>
+<link
+	rel="preload"
+	href="/fonts/soehne-halbfett.woff2"
+	as="font"
+	type="font/woff2"
+	crossorigin="anonymous"
+/>
+<link
+	rel="preload"
+	href="/fonts/soehne-leicht.woff2"
+	as="font"
+	type="font/woff2"
+	crossorigin="anonymous"
+/>
+
+<!-- Other metadata as per your original setup -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <meta name="generator" content={Astro.generator} />
-
-<!-- Font preloads -->
-
-<link rel="preload" href="/fonts/soehne-buch.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="preload" href="/fonts/soehne-halbfett.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="preload" href="/fonts/soehne-leicht.woff2" as="font" type="font/woff2" crossorigin />
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
 
 <!-- Primary Meta Tags -->
 <title>{title ? `${title} | Colin Delehanty` : 'Colin Delehanty'}</title>
-<meta name="title" content={title ? `${title} | Colin Delehanty` : 'Colin Delehanty'} />
+<meta
+	name="title"
+	content={title ? `${title} | Colin Delehanty` : 'Colin Delehanty'}
+/>
 <meta name="description" content={description} />
 
 <!-- Open Graph / Facebook -->
