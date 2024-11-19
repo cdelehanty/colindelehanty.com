@@ -12,6 +12,7 @@ import { useHeroCarousel } from '@/features/projects/components/carousel/hooks/u
 import { Cloudinary } from '@cloudinary/url-gen'
 import { AdvancedImage, lazyload } from '@cloudinary/react'
 import { fill } from '@cloudinary/url-gen/actions/resize'
+import { Close } from '@/components/icons'
 
 import {
 	Dialog,
@@ -22,6 +23,7 @@ import {
 	DialogTitle,
 	DialogDescription
 } from '@/components/ui/dialog'
+import { DialogClose } from '@radix-ui/react-dialog'
 
 interface DataItem {
 	data: {
@@ -190,11 +192,10 @@ const HeroCarouselCard: React.FC<{
 								<DialogPortal>
 									<DialogOverlay className="z-50 bg-black" />
 									<DialogContent className="container section-padding left-[50%] top-[50%] z-50 translate-x-[-50%] translate-y-[-50%]">
-										<DialogTitle className="sr-only">
-											Main Navigation
-										</DialogTitle>
+										<DialogTitle className="sr-only">Showreel 2024</DialogTitle>
 										<DialogDescription className="sr-only">
-											This is the main navigation menu.
+											A selection of time-lapses from installations, documentary
+											films, and commercial campaigns I've contributed to.
 										</DialogDescription>
 										<div className="aspect-video w-full">
 											<iframe
@@ -205,6 +206,9 @@ const HeroCarouselCard: React.FC<{
 											/>
 										</div>
 									</DialogContent>
+									<DialogClose className="pointer-events-auto fixed right-6 top-4 z-50 rounded-full bg-white p-2">
+										<Close className="size-5 text-black" />
+									</DialogClose>
 								</DialogPortal>
 							</Dialog>
 						)}
