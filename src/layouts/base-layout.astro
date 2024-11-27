@@ -6,16 +6,17 @@ import SpeedInsights from '@vercel/speed-insights/astro'
 type Props = {
 	title: string
 	description?: string
+	image?: string
 	bodyClass?: string
 }
 
-const { title, description, bodyClass } = Astro.props
+const { title, description, image, bodyClass } = Astro.props
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={title} description={description} />
+		<BaseHead title={title} description={description} image={image} />
 	</head>
 	<body class={cn('', bodyClass)}>
 		<slot />

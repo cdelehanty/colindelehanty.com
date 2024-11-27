@@ -50,7 +50,11 @@ const MDXCarousel: React.FC<MDXCarouselProps> = ({ images }) => {
 					>
 						<div className="relative w-full cursor-grab">
 							<AdvancedImage
-								cldImg={cld.image(image.src).resize(fill()).quality('auto').format('auto')}
+								cldImg={cld
+									.image(image.src)
+									.resize(fill())
+									.quality('auto')
+									.format('auto')}
 								plugins={[lazyload()]}
 								className="aspect-auto h-[448px] w-auto object-cover object-center md:h-[640px] 2xl:h-[800px] 2xl:rounded-lg"
 								alt={image.description || image.alt}

@@ -7,13 +7,19 @@ import Footer from '@/components/layout/footer.astro'
 type Props = {
 	title: string
 	description?: string
+	cover?: string
 	mainClass?: string
 }
 
-const { title, description, mainClass }: Props = Astro.props
+const { title, description, cover, mainClass }: Props = Astro.props
 ---
 
-<BaseLayout title={title} description={description} bodyClass="relative">
+<BaseLayout
+	title={title}
+	description={description}
+	image={cover}
+	bodyClass="relative"
+>
 	<Header />
 	<main class={cn('', mainClass)}>
 		<slot />

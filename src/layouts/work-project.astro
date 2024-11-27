@@ -3,10 +3,10 @@ import MainLayout from './main-layout.astro'
 import HeroSection from '@/components/sections/hero-section.astro'
 
 const { data, slug } = Astro.props
-const { title, description } = data
+const { title, description, cover } = data
 ---
 
-<MainLayout title={title} description={description} mainClass="">
+<MainLayout title={title} description={description} cover={cover} mainClass="">
 	<HeroSection
 		category={data.category}
 		title={data.title}

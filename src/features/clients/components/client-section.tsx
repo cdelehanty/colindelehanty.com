@@ -4,12 +4,18 @@ export function ClientSection() {
 	const { clientData = [] } = infoConfig
 
 	return (
-		<div className="container mdx-padding mt-32 flex w-full flex-col gap-14">
-			<div className="grid w-full grid-cols-2 gap-2.5 md:grid-cols-4 lg:grid-cols-5">
+		<div
+			style={{ backgroundColor: '#111111' }}
+			className="b mt-32 flex w-full flex-col p-10 pb-48 2xl:container 2xl:rounded-sm"
+		>
+			<div className="max-w-md pb-16 pt-30 text-5xl font-semibold text-primary md:text-display-2xl">
+				Clients
+			</div>
+			<div className="grid w-full grid-cols-2 gap-2.5 md:grid-cols-4 2xl:rounded-sm">
 				{clientData.slice(0, 4).map((list, listIndex) => (
 					<div
 						key={`list-${listIndex}`}
-						className="relative flex aspect-[3/2] flex-col items-center justify-center lg:aspect-square"
+						className="relative flex aspect-square flex-col items-center justify-center bg-black hover:scale-[101%] hover:bg-active"
 					>
 						{list.clients.map((client, clientIndex) => (
 							<div
@@ -20,7 +26,7 @@ export function ClientSection() {
 								}}
 							>
 								<div
-									className="flex aspect-square h-auto w-full items-center justify-center bg-utility-gray-900 grayscale"
+									className="flex aspect-square h-auto w-full items-center justify-center bg-utility-gray-300 grayscale hover:bg-white"
 									style={{
 										maskImage: `url("${client.logo}")`,
 										maskRepeat: 'no-repeat',
@@ -32,10 +38,10 @@ export function ClientSection() {
 						))}
 					</div>
 				))}
-				{clientData.slice(-1).map((list, listIndex) => (
+				{/* {clientData.slice(-1).map((list, listIndex) => (
 					<div
 						key={`list-last-${listIndex}`}
-						className="relative hidden aspect-[3/2] flex-col items-center justify-center lg:flex lg:aspect-square"
+						className="group relative hidden aspect-square flex-col items-center justify-center bg-black hover:scale-[103%] lg:flex"
 					>
 						{list.clients.map((client, clientIndex) => (
 							<div
@@ -46,7 +52,7 @@ export function ClientSection() {
 								}}
 							>
 								<div
-									className="flex aspect-square h-auto w-full items-center justify-center bg-utility-gray-900 grayscale"
+									className="flex aspect-square h-auto w-full items-center justify-center bg-utility-gray-300 grayscale hover:bg-utility-gray-500"
 									style={{
 										maskImage: `url("${client.logo}")`,
 										maskRepeat: 'no-repeat',
@@ -57,7 +63,7 @@ export function ClientSection() {
 							</div>
 						))}
 					</div>
-				))}
+				))} */}
 			</div>
 		</div>
 	)
