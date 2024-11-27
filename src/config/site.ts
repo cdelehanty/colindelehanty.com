@@ -5,7 +5,8 @@ import { getCollection } from 'astro:content'
 export const siteConfig: SiteConfig = {
 	name: 'Colin Delehanty',
 	icon: 'CD',
-	description: '',
+	description:
+		'Colin works creatively and technically, specializing in time-lapse photography with expertise in motion-controlled and remote camera systems.',
 	url: 'https://colindelehanty.com',
 	ogImage: '/public/og.jpg',
 	links: {

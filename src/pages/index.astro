@@ -18,7 +18,11 @@ const projectsByCategory = await Promise.all(
 )
 ---
 
-<MainLayout title="Home" mainClass="relative">
+<MainLayout
+	title="Home | Colin Delehanty"
+	description="Colin works creatively and technically, specializing in time-lapse photography with expertise in motion-controlled and remote camera systems."
+	mainClass="relative"
+>
 	<HeroCarousel data={featuredProjects} client:load />
 
 	<div class="reveal animate-revealContent relative">
