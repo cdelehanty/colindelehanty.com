@@ -6,7 +6,12 @@ const { data, slug } = Astro.props
 const { title, description, cover } = data
 ---
 
-<MainLayout title={title} description={description} cover={cover} mainClass="">
+<MainLayout
+	title={`${title} | Colin Delehanty`}
+	description={description}
+	cover={cover}
+	mainClass=""
+>
 	<HeroSection
 		category={data.category}
 		title={data.title}
@@ -16,7 +21,6 @@ const { title, description, cover } = data
 			text: data.link?.text,
 			href: data.link?.href
 		}}
-		slug={slug}
 		slug={slug}
 		animation={true}
 	/>
