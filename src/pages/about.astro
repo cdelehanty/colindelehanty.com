@@ -4,20 +4,15 @@ import HeroSection from '@/components/sections/hero-section.astro'
 import { MdxComponents } from '@/components/content/mdx-components'
 import { ClientSection } from '@/features/clients/components/client-section'
 
-const bioContent = await import('@/content/about/bio.mdx')
+const info = await import('@/content/about/info.mdx')
+
+const { title, description, cover } = info.frontmatter
 ---
 
 <MainLayout title="About" mainClass="">
 	<HeroSection
-		title="About"
-		description={`
-			I believe perspective has the power to unlock greater meaning, 
-			adding depth and color to even the most familiar. 
-			Through a range of visual mediums, including photography, 
-			film, and time-lapse, I explore my curiosity and fascination 
-			with the creativity of life, revealing new perspectives and 
-			inspiring growth.
-		`}
+		title={title}
+		description={description}
 		primary={{
 			text: 'View Resume',
 			href: 'https://res.cloudinary.com/dzsswr2ti/image/upload/ColinDelehanty_Resume.pdf'
@@ -26,11 +21,11 @@ const bioContent = await import('@/content/about/bio.mdx')
 			text: 'colin.delehanty@gmail.com',
 			href: 'mailto:colin.delehanty@gmail.com'
 		}}
-		cover="about/About_Cover"
+		cover={cover}
 		animation={true}
 	/>
 	<section class="reveal animate-revealContent relative">
-		<bioContent.default components={MdxComponents} />
+		<info.default components={MdxComponents} />
 		<ClientSection client:load />
 	</section>
 </MainLayout>
