@@ -28,8 +28,10 @@ export const useVideoControls = (delay: number = 2000) => {
 					// Set a new timeout for the current video
 					const timeoutId = setTimeout(() => {
 						setVideoOpacity(video, '1') // Change opacity to 1
-						video.play().catch((err) => console.error('Error playing video:', err))
-					}, 5000) // Delay playback by 5 seconds
+						video
+							.play()
+							.catch((err) => console.error('Error playing video:', err))
+					}, 3000) // Delay playback by 3 seconds
 
 					// Store this timeout ID in the ref
 					timeoutsRef.current.push(timeoutId)
@@ -69,7 +71,9 @@ export const useVideoControls = (delay: number = 2000) => {
 		const currentVideo = videoRefs.current[currentIndex]
 		if (currentVideo) {
 			if (isPaused) {
-				currentVideo.play().catch((err) => console.error('Error playing video:', err))
+				currentVideo
+					.play()
+					.catch((err) => console.error('Error playing video:', err))
 			} else {
 				currentVideo.pause()
 			}
