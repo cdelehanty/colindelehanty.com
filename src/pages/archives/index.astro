@@ -1,0 +1,20 @@
+---
+// import MasonryGrid from '@/features/gallery/components/masonry-grid'
+import MainLayout from '@/layouts/main-layout.astro'
+import HeroSection from '@/components/sections/hero-section.astro'
+---
+
+<MainLayout title="Work" mainClass="">
+	<HeroSection
+		title="Archives"
+		description={`
+			
+		`}
+		cover="/work/Work_Cover"
+		animation={true}
+	/>
+
+	<div class="reveal animate-revealContent section-padding pb-16 md:pb-24">
+		<!-- <MasonryGrid client:load /> -->
+	</div>
+</MainLayout>

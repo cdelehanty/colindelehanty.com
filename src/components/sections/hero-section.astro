@@ -19,10 +19,19 @@ export interface HeaderSectionProps {
 	}
 	slug: string
 	animation?: boolean
+	className: string
 }
 
-const { title, category, description, cover, primary, secondary, animation } =
-	Astro.props
+const {
+	title,
+	category,
+	description,
+	cover,
+	primary,
+	secondary,
+	animation,
+	className
+} = Astro.props
 ---
 
 <!-- Section container with optional cover image and content -->
@@ -42,7 +51,10 @@ const { title, category, description, cover, primary, secondary, animation } =
 						source: true,
 						gravity: 'center'
 					}}
-					class="absolute h-full w-full object-cover object-center"
+					class={cn(
+						'absolute h-full w-full object-cover object-center',
+						className
+					)}
 				/>
 			</div>
 		)

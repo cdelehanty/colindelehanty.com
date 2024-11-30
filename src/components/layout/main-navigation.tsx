@@ -16,7 +16,10 @@ export function MainNavigation() {
 			<NavigationMenuList className="">
 				{pages.map((page) => (
 					<NavigationMenuItem key={page.title}>
-						<NavigationMenuLink href={page.href} className={navigationMenuTriggerStyle()}>
+						<NavigationMenuLink
+							href={page.href}
+							className={navigationMenuTriggerStyle()}
+						>
 							{page.title}
 						</NavigationMenuLink>
 					</NavigationMenuItem>
