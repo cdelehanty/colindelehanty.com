@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils'
 
-import { Pause, Play } from '@/components/icons'
+import { Pause, Play } from '@/components/ui/icons'
 import { CarouselThumbsContainer, CarouselIndicator } from '@/components/ui/carousel'
 
 import React, { useState, useEffect } from 'react'

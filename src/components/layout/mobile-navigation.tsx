@@ -8,7 +8,7 @@ import {
 	DialogDescription
 } from '@/components/ui/dialog'
 import { buttonVariants } from '../ui/button'
-import { Mail } from '@/components/icons'
+import { Mail } from '@/components/ui/icons'
 import { navMenuConfig } from '@/config/nav-menu'
 
 const pages = navMenuConfig.pagesNav

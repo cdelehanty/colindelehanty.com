@@ -1,7 +1,7 @@
 import React from 'react'
 import type { ClientItem, FilmItem, MiscItem } from '@/features/info/schemas/info'
 
-import { ExternalLink } from '@/components/icons'
+import { ExternalLink } from '@/components/ui/icons'
 
 export const ClientItemCard: React.FC<{ client: ClientItem }> = ({ client }) => {
 	return (

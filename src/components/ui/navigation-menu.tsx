@@ -1,7 +1,7 @@
 import * as React from 'react'
 import * as NavigationMenuPrimitive from '@radix-ui/react-navigation-menu'
 import { cva } from 'class-variance-authority'
-import { ChevronDown } from '../icons'
+import { ChevronDown } from './icons'
 
 import { cn } from '@/lib/utils'
 
@@ -29,10 +29,7 @@ const NavigationMenuList = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<NavigationMenuPrimitive.List
 		ref={ref}
-		className={cn(
-			'group flex flex-1 list-none items-center justify-start gap-[36px]',
-			className
-		)}
+		className={cn('group flex flex-1 list-none items-center justify-start gap-[36px]', className)}
 		{...props}
 	/>
 ))
@@ -94,8 +91,7 @@ const NavigationMenuViewport = React.forwardRef<
 		/>
 	</div>
 ))
-NavigationMenuViewport.displayName =
-	NavigationMenuPrimitive.Viewport.displayName
+NavigationMenuViewport.displayName = NavigationMenuPrimitive.Viewport.displayName
 
 const NavigationMenuIndicator = React.forwardRef<
 	React.ElementRef<typeof NavigationMenuPrimitive.Indicator>,
@@ -112,8 +108,7 @@ const NavigationMenuIndicator = React.forwardRef<
 		<div className="relative top-[60%] h-2 w-2 rotate-45 rounded-tl-sm bg-border shadow-md" />
 	</NavigationMenuPrimitive.Indicator>
 ))
-NavigationMenuIndicator.displayName =
-	NavigationMenuPrimitive.Indicator.displayName
+NavigationMenuIndicator.displayName = NavigationMenuPrimitive.Indicator.displayName
 
 export {
 	navigationMenuTriggerStyle,

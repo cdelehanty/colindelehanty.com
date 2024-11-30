@@ -4,13 +4,11 @@ import { capitalizer } from '@/lib/utils'
 import { getCollection } from 'astro:content'
 import ProjectTabs from '@/features/projects/components/project-tabs.astro'
 import ProjectCard from '@/features/projects/components/project-card.astro'
-import HeroSection from '@/components/sections/hero-section.astro'
+import HeaderSection from '@/components/sections/header-section.astro'
 
 export async function getStaticPaths() {
 	const allProjects = await getCollection('work')
-	const filteredProjects = allProjects.filter(
-		(project) => !project.data.excluded
-	)
+	const filteredProjects = allProjects.filter((project) => !project.data.excluded)
 	const uniqueCategories = [
 		...new Set(filteredProjects.map((project) => project.data.category).flat())
 	]
@@ -34,7 +32,7 @@ const { projects } = Astro.props
 	title={`${capitalizer(category)}`}
 	description={`All projects for ${category} category`}
 >
-	<HeroSection
+	<HeaderSection
 		title="Work"
 		description={`
 			Examples of Colin's work and contributions made to the projects he's been apart of.
@@ -45,9 +43,7 @@ const { projects } = Astro.props
 
 	<div class="section-padding pb-16 md:pb-24">
 		<ProjectTabs />
-		<div
-			class="container grid select-none grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3"
-		>
+		<div class="container grid select-none grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
 			{projects.map((project) => <ProjectCard {...project} />)}
 		</div>
 	</div>

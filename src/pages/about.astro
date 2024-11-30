@@ -1,6 +1,6 @@
 ---
 import MainLayout from '@/layouts/main-layout.astro'
-import HeroSection from '@/components/sections/hero-section.astro'
+import HeaderSection from '@/components/sections/header-section.astro'
 import { MdxComponents } from '@/components/content/mdx-components'
 import { ClientSection } from '@/features/clients/components/client-section'
 
@@ -10,7 +10,7 @@ const { title, description, cover } = info.frontmatter
 ---
 
 <MainLayout title="About" mainClass="">
-	<HeroSection
+	<HeaderSection
 		title={title}
 		description={description}
 		primary={{

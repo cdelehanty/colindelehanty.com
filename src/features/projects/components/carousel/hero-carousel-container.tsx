@@ -2,17 +2,13 @@ import { cn } from '@/lib/utils'
 import React, { useEffect, useState } from 'react'
 import { Label } from '@/components/ui/label'
 import { buttonVariants } from '@/components/ui/button'
-import {
-	CarouselMainContainer,
-	SliderMainItem,
-	useCarousel
-} from '@/components/ui/carousel'
+import { CarouselMainContainer, SliderMainItem, useCarousel } from '@/components/ui/carousel'
 import { useVideoControls } from '@/features/projects/components/carousel/hooks/use-video-controls'
 import { useHeroCarousel } from '@/features/projects/components/carousel/hooks/use-hero-carousel'
 import { Cloudinary } from '@cloudinary/url-gen'
 import { AdvancedImage, lazyload } from '@cloudinary/react'
 import { fill } from '@cloudinary/url-gen/actions/resize'
-import { Close } from '@/components/icons'
+import { Close } from '@/components/ui/icons'
 
 import {
 	Dialog,
@@ -47,13 +43,9 @@ const cld = new Cloudinary({
 	}
 })
 
-const HeroCarouselContainer: React.FC<HeroCarouselContainerProps> = ({
-	data,
-	videoControls
-}) => {
+const HeroCarouselContainer: React.FC<HeroCarouselContainerProps> = ({ data, videoControls }) => {
 	const carousel = useCarousel()
-	const { videoRefs, setCurrentIndex, currentIndex, handleVideoPlayback } =
-		videoControls
+	const { videoRefs, setCurrentIndex, currentIndex, handleVideoPlayback } = videoControls
 	const [initialLoadComplete, setInitialLoadComplete] = useState(false)
 
 	useEffect(() => {
@@ -72,10 +64,7 @@ const HeroCarouselContainer: React.FC<HeroCarouselContainerProps> = ({
 	return (
 		<CarouselMainContainer className="relative">
 			{data.map((dataItem, index) => (
-				<SliderMainItem
-					key={dataItem.slug}
-					className="relative flex basis-full items-end"
-				>
+				<SliderMainItem key={dataItem.slug} className="relative flex basis-full items-end">
 					<article
 						title={dataItem.data.title}
 						className="section-padding relative flex h-[85vh] max-h-[1080px] min-h-[540px] w-full pb-[44px] md:h-[720px] md:pb-[200px] md:pt-[56px] 2xl:h-[1080px]"
@@ -145,11 +134,7 @@ const HeroCarouselCard: React.FC<{
 			)}
 
 			<div className="absolute flex flex-col text-center md:max-w-2xl md:text-left">
-				{index !== 0 && (
-					<Label className="animate-revealHero1 reveal capitalize">
-						{category}
-					</Label>
-				)}
+				{index !== 0 && <Label className="animate-revealHero1 reveal capitalize">{category}</Label>}
 				<h1 className="animate-revealHero1 reveal mb-1 w-full text-display-md font-semibold text-primary md:mb-5 md:text-display-2xl">
 					{title}
 				</h1>
@@ -194,8 +179,8 @@ const HeroCarouselCard: React.FC<{
 									<DialogContent className="container section-padding left-[50%] top-[50%] z-50 translate-x-[-50%] translate-y-[-50%]">
 										<DialogTitle className="sr-only">Showreel 2024</DialogTitle>
 										<DialogDescription className="sr-only">
-											A selection of time-lapses from installations, documentary
-											films, and commercial campaigns I've contributed to.
+											A selection of time-lapses from installations, documentary films, and
+											commercial campaigns I've contributed to.
 										</DialogDescription>
 										<div className="aspect-video w-full">
 											<iframe

@@ -1,26 +1,123 @@
 ---
-import { Label } from '../ui/label'
+import { Label } from '@/components/ui/label'
+import { CldImage } from 'astro-cloudinary'
 import { cn } from '@/lib/utils'
+import { buttonVariants } from '../ui/button'
 
-interface Props {
+export interface HeaderSectionProps {
 	title?: string
+	category?: string
 	description?: string
-	className?: string
+	cover?: string
+	primary?: {
+		text: string
+		href: string
+	}
+	secondary?: {
+		text: string
+		href: string
+	}
+	slug: string
+	animation?: boolean
+	className: string
 }
 
-const { title, description, className } = Astro.props
+const { title, category, description, cover, primary, secondary, animation, className } =
+	Astro.props
 ---
 
-<section class={cn('section-padding', className)}>
-	<div class="container flex flex-col">
-		<header class="mb-5 flex w-full flex-col">
-			<h2 class="text-lg font-semibold text-brand-secondary md:text-xl">
-				{title}
-			</h2>
-			<p class="text-base font-normal text-tertiary md:text-lg">
-				{description}
-			</p>
-		</header>
-		<slot name="section-content" />
-	</div>
+<!-- Section container with optional cover image and content -->
+<section class="section-padding pointer-events-none z-20 pb-16 pt-30 md:pb-20 md:pt-[184px]">
+	{
+		cover && (
+			<div
+				class={`${animation ? 'animate-fade fade' : ''} absolute inset-0 -z-10 flex h-[640px] w-full select-none justify-center overflow-hidden after:absolute after:bottom-0 after:left-0 after:h-full after:w-full after:bg-gradient-to-t after:from-black after:to-transparent`}
+			>
+				<CldImage
+					src={cover}
+					alt={title || 'Cover Image'}
+					crop={{
+						type: 'fill',
+						source: true
+					}}
+					quality="auto"
+					format="auto"
+					sizes="100vw"
+					class={cn('absolute h-full w-full object-cover object-center', className)}
+				/>
+			</div>
+		)
+	}
+	<!-- Header with title, description, and buttons -->
+	<header class="container flex flex-col gap-6 md:gap-8">
+		<div class="flex flex-col md:max-w-2xl">
+			{
+				category && (
+					<Label className={`${animation ? 'animate-revealHero1 reveal capitalize' : ''}`}>
+						{category}
+					</Label>
+				)
+			}
+
+			{
+				title && (
+					<h1
+						class={`mb-3 w-full text-display-lg font-semibold text-primary md:mb-5 md:text-display-2xl ${animation ? 'animate-revealHero1 reveal' : ''}`}
+					>
+						{title}
+					</h1>
+				)
+			}
+
+			{
+				description && (
+					<p
+						class={`text-lg font-normal text-secondary md:text-xl ${animation ? 'animate-revealHero2 reveal' : ''}`}
+					>
+						{description}
+					</p>
+				)
+			}
+		</div>
+
+		{
+			(primary?.href || secondary?.href) && (
+				<div class={`flex gap-2 max-xs:flex-col ${animation ? 'animate-revealHero3 reveal' : ''}`}>
+					{primary && (
+						<a
+							href={primary.href}
+							target="_blank"
+							class={cn(
+								buttonVariants({
+									variant: 'secondary',
+									size: 'sm',
+									rounded: 'full'
+								}),
+								'pointer-events-auto'
+							)}
+						>
+							<span>{primary.text}</span>
+						</a>
+					)}
+
+					{secondary && (
+						<a
+							href={secondary.href}
+							target="_blank"
+							class={cn(
+								buttonVariants({
+									variant: 'link',
+									size: 'md',
+									rounded: 'full'
+								}),
+								'pointer-events-auto'
+							)}
+						>
+							<span>{secondary.text}</span>
+						</a>
+					)}
+				</div>
+			)
+		}
+	</header>
 </section>
