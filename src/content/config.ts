@@ -1,4 +1,5 @@
 import { defineCollection, z } from 'astro:content'
+import { cldAssetsLoader } from 'astro-cloudinary/loaders'
 
 const work = defineCollection({
 	schema: ({ image }) =>
@@ -25,4 +26,10 @@ const work = defineCollection({
 		})
 })
 
-export const collections = { work }
+const archives = defineCollection({
+	loader: cldAssetsLoader({
+		folder: 'archives'
+	})
+})
+
+export const collections = { work, archives }

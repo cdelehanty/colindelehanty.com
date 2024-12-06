@@ -1,20 +1,26 @@
 ---
-// import MasonryGrid from '@/features/gallery/components/masonry-grid'
+import MasonryGrid from '@/features/gallery/components/masonry-grid'
 import MainLayout from '@/layouts/main-layout.astro'
 import HeaderSection from '@/components/sections/header-section.astro'
+import { getCollection } from 'astro:content'
+
+const archives = await getCollection('archives')
+
+const sortedItems = archives.sort((a, b) => {
+	const nameA = a.id.toLowerCase()
+	const nameB = b.id.toLowerCase()
+	if (nameA < nameB) return -1
+	if (nameA > nameB) return 1
+	return 0
+})
+
+const items = sortedItems.map((item) => item.id)
 ---
 
 <MainLayout title="Work" mainClass="">
-	<HeaderSection
-		title="Archives"
-		description={`
-			
-		`}
-		cover="/work/Work_Cover"
-		animation={true}
-	/>
+	<HeaderSection title="Archives" description={` `} cover="/work/Work_Cover" animation={true} />
 
 	<div class="reveal animate-revealContent section-padding pb-16 md:pb-24">
-		<!-- <MasonryGrid client:load /> -->
+		<MasonryGrid items={items} client:load />
 	</div>
 </MainLayout>
