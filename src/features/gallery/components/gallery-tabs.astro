@@ -1,8 +1,6 @@
 ---
 import { buttonVariants } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
-
-const { collection } = Astro.params
 ---
 
 <ul class="container mb-12 flex w-full items-center gap-3 overflow-auto">
@@ -10,9 +8,8 @@ const { collection } = Astro.params
 		<a
 			href={`/archives`}
 			class={cn(
-				!collection ? '' : '',
 				buttonVariants({
-					variant: !collection ? 'secondary' : 'link',
+					variant: 'secondary',
 					size: 'sm',
 					rounded: 'full'
 				}),

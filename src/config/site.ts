@@ -37,7 +37,7 @@ export const footerLinks: SidebarNavItem[] = [
 	},
 	{
 		title: 'Archives',
-		items: [{ title: '2013-2014', href: '#' }]
+		href: '/archives'
 	},
 	{
 		title: 'About',
