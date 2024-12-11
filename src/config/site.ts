@@ -35,14 +35,10 @@ export const footerLinks: SidebarNavItem[] = [
 		href: '/work',
 		items: await getCategoryLinks()
 	},
-	// {
-	// 	title: 'Archives',
-	// 	items: [
-	// 		{ title: '2013-2015', href: '#' },
-	// 		{ title: '2016-2018', href: '#' },
-	// 		{ title: '2019-2021', href: '#' }
-	// 	]
-	// },
+	{
+		title: 'Archives',
+		items: [{ title: '2013-2014', href: '#' }]
+	},
 	{
 		title: 'About',
 		href: '/about',

@@ -6,10 +6,10 @@ export const navMenuConfig: NavMenuConfig = {
 			title: 'Work',
 			href: '/work'
 		},
-		// {
-		// 	title: 'Archives',
-		// 	href: '/arhives'
-		// },
+		{
+			title: 'Archives',
+			href: '/archives'
+		},
 		{
 			title: 'About',
 			href: '/about'

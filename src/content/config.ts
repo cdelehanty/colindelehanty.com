@@ -5,7 +5,7 @@ const work = defineCollection({
 	schema: ({ image }) =>
 		z.object({
 			category: z.string(),
-			title: z.string().regex(/^[a-zA-Z0-9\s?.']+$/),
+			title: z.string().regex(/^[a-zA-Z0-9\s?.'-]+$/),
 			description: z.string(),
 			client: z.string().optional(),
 			date: z

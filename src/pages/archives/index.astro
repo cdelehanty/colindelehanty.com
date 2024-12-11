@@ -3,6 +3,7 @@ import MasonryGrid from '@/features/gallery/components/masonry-grid'
 import MainLayout from '@/layouts/main-layout.astro'
 import HeaderSection from '@/components/sections/header-section.astro'
 import { getCollection } from 'astro:content'
+import GalleryTabs from '@/features/gallery/components/gallery-tabs.astro'
 
 const archives = await getCollection('archives')
 
@@ -18,9 +19,17 @@ const items = sortedItems.map((item) => item.id)
 ---
 
 <MainLayout title="Work" mainClass="">
-	<HeaderSection title="Archives" description={` `} cover="/work/Work_Cover" animation={true} />
-
+	<HeaderSection
+		title="Archives"
+		description={`
+			An evolving archive of images spanning from 2011 to the present. Updated frequently as I curate and share from my extensive catalog.
+		`}
+		cover="/work/Work_Cover"
+		animation={true}
+	/>
 	<div class="reveal animate-revealContent section-padding pb-16 md:pb-24">
+		<GalleryTabs />
 		<MasonryGrid items={items} client:load />
 	</div>
+	<div class="reveal animate-revealContent section-padding pb-16 md:pb-24"></div>
 </MainLayout>
