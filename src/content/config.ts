@@ -28,6 +28,7 @@ const work = defineCollection({
 
 const archives = defineCollection({
 	loader: cldAssetsLoader({
+		limit: 1000,
 		folder: 'archives'
 	})
 })
