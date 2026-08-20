@@ -10,7 +10,7 @@ honor its STOP conditions, and update its row when done.
 |------|-------|----------|--------|------------|--------|
 | 001 | Restore supported Vercel builds on Node 22 | P1 | S | — | DONE |
 | 002 | Add repeatable deployment verification | P1 | M | 001 | TODO |
-| 003 | Align the public portfolio with Magnit/Apple wording | P1 | S | 001, 002 | BLOCKED — website preview passes; corrected resume approval still required |
+| 003 | Align the public portfolio with Magnit/Apple wording | P1 | S | 001, 002 | IN PROGRESS — final preview verified; production deployment pending |
 | 004 | Upgrade Astro and migrate content collections | P1 | L | 001, 002 | TODO |
 
 Status values: TODO | IN PROGRESS | DONE | BLOCKED (with one-line reason) |

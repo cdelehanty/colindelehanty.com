@@ -235,6 +235,12 @@ Stop and report if:
   exist because Plan 002 is still pending. The existing `npm run tsc` also
   fails on the repository's pre-existing TypeScript/Astro configuration mismatch;
   neither issue was changed in this content-only branch.
-- Step 4 remains blocked: the attached resume has not been corrected and
-  approved, so the existing website resume links were deliberately left
-  unchanged and the attached PDF was not published.
+- Step 4 was cleared on 2026-08-19. The operator supplied and approved the
+  corrected, versioned Cloudinary PDF at
+  `https://res.cloudinary.com/dzsswr2ti/image/upload/v1787202081/ColinDelehanty_Resume.pdf`.
+  Both pages were rendered and inspected, the Magnit/Apple wording was verified,
+  and both website resume links were updated to that immutable version.
+- The final preview reached Ready at
+  `https://colindelehanty-4xt05zerl-colin-delehanty.vercel.app`. Both About-page
+  resume links resolve to the corrected PDF, which returns HTTP 200 with
+  `Content-Type: application/pdf`.
