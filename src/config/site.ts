@@ -45,7 +45,7 @@ export const footerLinks: SidebarNavItem[] = [
 		items: [
 			{
 				title: 'View resume',
-				href: 'https://res.cloudinary.com/dzsswr2ti/image/upload/ColinDelehanty_Resume.pdf'
+				href: 'https://res.cloudinary.com/dzsswr2ti/image/upload/v1787202081/ColinDelehanty_Resume.pdf'
 			}
 		]
 	},
