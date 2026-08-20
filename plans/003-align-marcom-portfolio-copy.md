@@ -218,3 +218,23 @@ Stop and report if:
 - Keep the approved resume in the repo or use a versioned asset URL so the site
   and resume cannot silently drift apart.
 
+## Verification record — 2026-08-19
+
+- Website copy implemented in commit `31c2da9` on
+  `advisor/003-marcom-copy`.
+- Vercel preview reached Ready at
+  `https://colindelehanty-73gwhdpci-colin-delehanty.vercel.app`.
+- Vercel built 19 static pages with Node 22 and `@astrojs/vercel/static`.
+- Browser smoke tests passed for `/`, `/work`, `/about`, `/archives`,
+  `/work/rainbow-stage`, and `/work/apple-campaigns`.
+- Preview metadata contains the new contract wording; the old direct-Apple
+  claims are absent. The About page no longer loads `about/apple.svg`, and the
+  four-tile client layout remains intact.
+- The protected Rainbow Stage Vimeo embed still requires its password.
+- Local `npm run build` passed. The planned `npm run verify` script does not
+  exist because Plan 002 is still pending. The existing `npm run tsc` also
+  fails on the repository's pre-existing TypeScript/Astro configuration mismatch;
+  neither issue was changed in this content-only branch.
+- Step 4 remains blocked: the attached resume has not been corrected and
+  approved, so the existing website resume links were deliberately left
+  unchanged and the attached PDF was not published.
