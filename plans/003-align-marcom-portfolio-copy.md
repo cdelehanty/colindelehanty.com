@@ -244,3 +244,8 @@ Stop and report if:
   `https://colindelehanty-4xt05zerl-colin-delehanty.vercel.app`. Both About-page
   resume links resolve to the corrected PDF, which returns HTTP 200 with
   `Content-Type: application/pdf`.
+- Production deployment `dpl_3r1pDx1JttP2j5ryoUeTWtBt5kAH` reached Ready from
+  main commit `f83794a`. Browser checks on `https://www.colindelehanty.com`
+  passed for `/`, `/work`, `/about`, `/archives`, `/work/rainbow-stage`, and
+  `/work/apple-campaigns`; both project pages contain the approved wording and
+  neither contains the old direct-Apple claims.
