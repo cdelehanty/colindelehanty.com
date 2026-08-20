@@ -38,8 +38,8 @@ project credit removes the employment implication.
 - The operator confirmed the Rainbow Stage engagement was through Magnit Global.
 - `src/content/work/apple-campaigns.mdx:4-7` says "Contracted by Apple" and
   `role: Photographer`; lines 34-41 say "I worked with Apple."
-- The staffing arrangement for the 2014/2015 Apple Campaigns has not been
-  confirmed as Magnit; do not invent that attribution.
+- On 2026-08-19, the operator confirmed that the 2014/2015 Apple Campaigns
+  engagement was also through Magnit Global.
 - `src/content/about/info.mdx:26-29` says Colin collaborated with leading brands
   like Apple.
 - `src/features/clients/schemas/data.ts:41-47` supplies the Apple logo rendered
@@ -76,7 +76,7 @@ project credit removes the employment implication.
 
 **Out of scope**:
 
-- Claiming that the Apple Campaigns engagement used Magnit without evidence
+- Claiming that another Apple engagement used Magnit without confirmation
 - Editing or using the old resume currently hosted at the website's View Resume
   URL
 - Republishing, removing, or relicensing Apple project media
@@ -111,26 +111,26 @@ Keep the factual production details and frame/day counts unchanged.
 
 **Verify**: `rg -n "Magnit Global \(contractor at Apple Inc\.\)|Contract Photographer" src/content/work/rainbow-stage.mdx` -> both phrases are present, and `rg -n "commissioned by Apple|I worked with Apple" src/content/work/rainbow-stage.mdx` -> no output.
 
-### Step 2: Use neutral contract language for Apple Campaigns
+### Step 2: Identify the Magnit relationship for Apple Campaigns
 
-Until the staffing vendor is confirmed, do not name Magnit. Change the
-frontmatter to:
+After the operator confirmed that the engagement was through Magnit Global,
+change the frontmatter to:
 
 ```yaml
-description: Worked as a contract photographer supporting Apple Inc. on multiple launch productions, creating time-lapse sequences that showcased new iPhone and iPad camera capabilities.
-client: Apple Inc. (contract project)
+description: Through Magnit Global, I worked as a contract photographer supporting Apple Inc. on multiple launch productions, creating time-lapse sequences that showcased new iPhone and iPad camera capabilities.
+client: Magnit Global (contractor at Apple Inc.)
 role: Contract Photographer
 ```
 
 Change the first body sentence to begin:
 
 ```text
-I worked as a contract photographer supporting Apple Inc. on multiple productions...
+Through Magnit Global, I worked as a contract photographer supporting Apple Inc. on multiple productions...
 ```
 
 Preserve the remaining factual campaign details.
 
-**Verify**: `rg -n "Contracted by Apple|I worked with Apple" src/content/work/apple-campaigns.mdx` -> no output; `rg -n "contract photographer supporting Apple Inc\." src/content/work/apple-campaigns.mdx` -> at least two matches.
+**Verify**: `rg -n "Contracted by Apple|I worked with Apple" src/content/work/apple-campaigns.mdx` -> no output; `rg -n "Magnit Global \(contractor at Apple Inc\.\)|contract photographer supporting Apple" src/content/work/apple-campaigns.mdx` -> both phrases are present.
 
 ### Step 3: Clarify the About-page relationship and logo
 
@@ -188,7 +188,7 @@ wording and no old wording; the resume opens and is the approved corrected PDF.
 ## Done criteria
 
 - [ ] Rainbow Stage names Magnit Global and says contractor at Apple Inc.
-- [ ] Apple Campaigns says Contract Photographer and does not invent Magnit.
+- [ ] Apple Campaigns names Magnit Global and says contractor at Apple Inc.
 - [ ] About copy uses contract-project language.
 - [ ] Apple logo is removed from the client rotation unless written approval is documented.
 - [ ] The hosted resume is replaced only with an approved correction of the attached PDF.
@@ -200,8 +200,8 @@ wording and no old wording; the resume opens and is the approved corrected PDF.
 
 Stop and report if:
 
-- Anyone asks the executor to claim the Apple Campaigns used Magnit without
-  documentary confirmation.
+- Anyone asks the executor to attribute another Apple engagement to Magnit
+  without confirmation.
 - The corrected attached resume is not approved or cannot be located.
 - Removing the Apple logo breaks the client carousel layout and requires a
   component redesign; report it for a separate UI change.
