@@ -42,10 +42,6 @@ export const infoConfig: InfoConfig = {
 			list: '3',
 			clients: [
 				{
-					name: 'Apple',
-					logo: 'https://res.cloudinary.com/dzsswr2ti/image/upload/v1731974516/about/apple.svg'
-				},
-				{
 					name: 'Salesforce',
 					logo: 'https://res.cloudinary.com/dzsswr2ti/image/upload/v1731974774/about/salesforce.svg'
 				},
