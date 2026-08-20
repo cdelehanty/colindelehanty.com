@@ -217,3 +217,11 @@ Stop and report if:
   newer, and Vercel currently supports the 22.x line.
 - A failed build does not validate source changes, but it also should not replace
   the current production deployment. Always inspect the preview before promotion.
+
+## Verification record
+
+- Completed locally and on Vercel Preview on 2026-08-19.
+- Verified commit: `735fa64`.
+- Preview: `https://colindelehanty-4oui6zgg3-colin-delehanty.vercel.app`.
+- Result: Node 22, Astro static adapter, 19 generated pages, no Vercel functions,
+  and all six smoke-test routes passed.

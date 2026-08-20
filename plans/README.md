@@ -8,7 +8,7 @@ honor its STOP conditions, and update its row when done.
 
 | Plan | Title | Priority | Effort | Depends on | Status |
 |------|-------|----------|--------|------------|--------|
-| 001 | Restore supported Vercel builds on Node 22 | P1 | S | — | IN PROGRESS — local checks pass; preview pending |
+| 001 | Restore supported Vercel builds on Node 22 | P1 | S | — | DONE |
 | 002 | Add repeatable deployment verification | P1 | M | 001 | TODO |
 | 003 | Align the public portfolio with Magnit/Apple wording | P1 | S | 001, 002 | TODO |
 | 004 | Upgrade Astro and migrate content collections | P1 | L | 001, 002 | TODO |
